@@ -1,0 +1,664 @@
+{
+    "viewAssets": {
+        "general": [
+            {
+                "name": "publix \"snowflake\" west wayne",
+                "video_path": "publix_snowflake.mp4",
+                "screencap_path": "publix_snowflake.png"
+            },
+            {
+                "name": "always \"image girl\" bromley",
+                "video_path": "always_image_girl.mp4",
+                "screencap_path": "always_image_girl.png"
+            },
+            {
+                "name": "budweiser \"hops\" ddb needham",
+                "video_path": "budweiser_hops.mp4",
+                "screencap_path": "budweiser_hops.png"
+            },
+            {
+                "name": "coffeemate \"stimulate\" mccann erickson",
+                "video_path": "coffeemate_stimulate.mp4",
+                "screencap_path": "coffeemate_stimulate.png"
+            },
+            {
+                "name": "honda \"fortune teller\" muse cordero chen",
+                "video_path": "honda_fortune_teller.mp4",
+                "screencap_path": "honda_fortune_teller.png"
+            },
+            {
+                "name": "sargento \"favorites\" laughlin constable",
+                "video_path": "sargento_favorites.mp4",
+                "screencap_path": "sargento_favorites.png"
+            },
+            {
+                "name": "ge \"invisible\" zubi",
+                "video_path": "ge_invisible.mp4",
+                "screencap_path": "ge_invisible.png"
+            },
+            {
+                "name": "walmart \"lake\" bernstein rein",
+                "video_path": "walmart_lake.mp4",
+                "screencap_path": "walmart_lake.png"
+            },
+            {
+                "name": "busch \"nascar\" ddb needham",
+                "video_path": "busch_nascar.mp4",
+                "screencap_path": "busch_nascar.png"
+            }
+        ],
+        "contemporary": [
+            {
+                "name": "huffy bikes \"fly\" euro rscg",
+                "video_path": "huffy_bikes_fly.mp4",
+                "screencap_path": "huffy_bikes_fly.png"
+            },
+            {
+                "name": "jc penney \"arizona jeans\" temerlin mcclain",
+                "video_path": "jc_penney_arizona_jeans.mp4",
+                "screencap_path": "jc_penney_arizona_jeans.png"
+            },
+            {
+                "name": "nhra racing \"formula\" grant scott hurley",
+                "video_path": "nhra_racing_formula.mp4",
+                "screencap_path": "nhra_racing_formula.png"
+            },
+            {
+                "name": "capri sun \"rollerblade\" ogilvy",
+                "video_path": "capri_sun_rollerblade.mp4",
+                "screencap_path": "capri_sun_rollerblade.png"
+            },
+            {
+                "name": "walmart \"ca awareness\" bernstein rein",
+                "video_path": "walmart_ca_awareness.mp4",
+                "screencap_path": "walmart_ca_awareness.png"
+            },
+            {
+                "name": "walmart \"stay at home mom\" bernstein rein",
+                "video_path": "walmart_stay_at_home_mom.mp4",
+                "screencap_path": "walmart_stay_at_home_mom.png"
+            },
+            {
+                "name": "always \"image girl\" bromley",
+                "video_path": "always_image_girl.mp4",
+                "screencap_path": "always_image_girl.png"
+            },
+            {
+                "name": "coffeemate \"stimulate\" mccann erickson",
+                "video_path": "coffeemate_stimulate.mp4",
+                "screencap_path": "coffeemate_stimulate.png"
+            },
+            {
+                "name": "budweiser \"billiards\" ddb needham",
+                "video_path": "budweiser_billiards.mp4",
+                "screencap_path": "budweiser_billiards.png"
+            },
+            {
+                "name": "busch \"nascar\" ddb needham",
+                "video_path": "busch_nascar.mp4",
+                "screencap_path": "busch_nascar.png"
+            },
+            {
+                "name": "budweiser \"hops\" ddb needham",
+                "video_path": "budweiser_hops.mp4",
+                "screencap_path": "budweiser_hops.png"
+            }
+            
+        ],
+        "humor": [
+            {
+                "name": "budweiser \"billiards\" ddb needham",
+                "video_path": "budweiser_billiards.mp4",
+                "screencap_path": "budweiser_billiards.png"
+            },
+            {
+                "name": "cdw \"fred\" dwp bates",
+                "video_path": "cdw_fred.mp4",
+                "screencap_path": "cdw_fred.png"
+            },
+            {
+                "name": "bmw mini-cooper \"clown\" crispin porter",
+                "video_path": "bmw_mini-cooper_clown.mp4",
+                "screencap_path": "bmw_mini-cooper_clown.png"
+            },
+            {
+                "name": "eggos \"invisible fence\" leo burnett",
+                "video_path": "eggos_invisible_fence.mp4",
+                "screencap_path": "eggos_invisible_fence.png" 
+            },
+            {
+                "name": "quaker oats \"the deal\" element 79",
+                "video_path": "quaker_oats_the_deal.mp4",
+                "screencap_path": "quaker_oats_the_deal.png" 
+            },
+            {
+                "name": "rice krispies \"waterworld\" leo burnett",
+                "video_path": "rice_krispies_waterworld.mp4",
+                "screencap_path": "rice_krispies_waterworld.png" 
+            },
+            {
+                "name": "rockport \"lancaster\" leo burnett",
+                "video_path": "rockport_lancaster.mp4",
+                "screencap_path": "rockport_lancaster.png" 
+            },
+            {
+                "name": "sears \"big sound\" ogilvy",
+                "video_path": "sears_big_sound.mp4",
+                "screencap_path": "sears_big_sound.png"
+            },
+            {
+                "name": "very fine \"marathon\" chiat day",
+                "video_path": "very_fine_marathon.mp4",
+                "screencap_path": "very_fine_marathon.png"
+            },
+            {
+                "name": "walmart \"working mom\" bernstein rein",
+                "video_path": "walmart_working_mom.mp4",
+                "screencap_path": "walmart_working_mom.png"
+            }
+        ],
+        "moods": [
+            {
+                "name": "cdhs \"felice\" asher&partners",
+                "video_path": "cdhs_felice.mp4" ,
+                "screencap_path": "cdhs_felice.png"
+            },
+            {
+                "name": "chilean fruit farmers \"centuries\" j. brown & associates",
+                "video_path": "chilean_fruit_farmers_centuries.mp4",
+                "screencap_path": "chilean_fruit_farmers_centuries.png"
+            },
+            {
+                "name": "columbo yogurt \"smooth as it gets\" ddb needham",
+                "video_path": "columbo_yogurt_smooth_as_it_gets.mp4",
+                "screencap_path": "columbo_yogurt_smooth_as_it_gets.png"
+            },
+            {
+                "name": "ge \"invisible\" zubi",
+                "video_path": "ge_invisible.mp4",
+                "screencap_path": "ge_invisible.png"
+            },
+            {
+                "name": "ge \"planning\" zubi",
+                "video_path": "ge_planning.mp4",
+                "screencap_path": "ge_planning.png"
+            },
+            {
+                "name": "phillips 66 \"invisible \" nkh&w",
+                "video_path": "phillips_66_invisible.mp4",
+                "screencap_path": "phillips_66_invisible.png"
+            },
+            {
+                "name": "sears \"sense of feel\" ogilvy",
+                "video_path": "sears_sense_of_feel.mp4",
+                "screencap_path": "sears_sense_of_feel.png"
+            },
+            {
+                "name": "western union \"birds\" j. walter thompson",
+                "video_path": "western_union_birds.mp4",
+                "screencap_path": "western_union_birds.png"
+            },
+            {
+                "name": "publix \"snowflake\" west wayne",
+                "video_path": "publix_snowflake.mp4",
+                "screencap_path": "publix_snowflake.png"
+            },
+            {
+                "name": "honda \"fortune teller\" muse cordero chen",
+                "video_path": "honda_fortune_teller.mp4",
+                "screencap_path": "honda_fortune_teller.png"
+            }
+        ],
+        "orchestral": [
+            {
+                "name": "cadillac \"pop-ups\" d'arcy",
+                "video_path": "cadillac_pop-ups.mp4",
+                "screencap_path": "cadillac_pop-ups.png"
+            },
+            {
+                "name": "chevy suburban \"homecoming\" campbell ewald",
+                "video_path": "chevy_suburban_homecoming.mp4",
+                "screencap_path": "chevy_suburban_homecoming.png"
+            },
+            {
+                "name": "mazda \"sci-fi\" fcb",
+                "video_path": "mazda_sci-fi.mp4",
+                "screencap_path": "mazda_sci-fi.png"
+            },
+            {
+                "name": "mcdonald's \"artist\" drm",
+                "video_path": "mcdonalds_artist.mp4",
+                "screencap_path": "mcdonalds_artist.png"
+            },
+            {
+                "name": "wilson golf \"dream\" ogilvy",
+                "video_path": "wilson_golf_dream.mp4",
+                "screencap_path": "wilson_golf_dream.png"
+            },
+            {
+                "name": "publix \"snowflake\" west wayne",
+                "video_path": "publix_snowflake.mp4",
+                "screencap_path": "publix_snowflake.png"
+            },
+            {
+                "name": "sargento \"favorites\" laughlin constable",
+                "video_path": "sargento_favorites.mp4",
+                "screencap_path": "sargento_favorites.png"
+            },
+            {
+                "name": "chilean fruit farmers \"centuries\" j. brown & associates",
+                "video_path": "chilean_fruit_farmers_centuries.mp4",
+                "screencap_path": "chilean_fruit_farmers_centuries.png"
+            }
+        ],
+        "spanish": [
+            {
+                "name": "always \"dance\" bromley",
+                "video_path": "always_dance.mp4",
+                "screencap_path": "always_dance.png"
+            },
+            {
+                "name": "bellsouth \"mercy\" drm",
+                "video_path": "bellsouth_mercy.mp4",
+                "screencap_path": "bellsouth_mercy.png"
+            },
+            {
+                "name": "coors \"educacion\" casanova pendrill",
+                "video_path": "coors_educacion.mp4",
+                "screencap_path": "coors_educacion.png"
+            },
+            {
+                "name": "ge \"invisible\" zubi",
+                "video_path": "ge_invisible.mp4",
+                "screencap_path": "ge_invisible.png"
+            },
+            {
+                "name": "ge \"planning\" zubi",
+                "video_path": "ge_planning.mp4",
+                "screencap_path": "ge_planning.png"
+            },
+            {
+                "name": "hanes \"spring fashions \" drm",
+                "video_path": "hanes_spring_fashions.mp4",
+                "screencap_path": "hanes_spring_fashions.png"
+            },
+            {
+                "name": "leggs \"piropos\" drm",
+                "video_path": "leggs_piropos.mp4",
+                "screencap_path": "leggs_piropos.png"
+            },
+            {
+                "name": "verizon \"new car\" la agencia de orci",
+                "video_path": "verizon_new_car.mp4",
+                "screencap_path": "verizon_new_car.png"
+            },
+            {
+                "name": "western union \"doctor\" bromley",
+                "video_path": "western_union_doctor.mp4",
+                "screencap_path": "western_union_doctor.png"
+            },
+            {
+                "name": "always \"image girl\" bromley",
+                "video_path": "always_image_girl.mp4",
+                "screencap_path": "always_image_girl.png"
+            }
+            
+        ]
+    },
+    "listenAssets":{
+        "montage": {
+            "file_location": "montage.mp3"
+        },
+        "grooves": [
+            {
+                "name": "air touch \"supercharged\"",
+                "file_location": "air_touch_supercharged.mp3"
+            },
+            {
+                "name": "clorox \"brighter\"",
+                "file_location": "clorox_brighter.mp3"
+            },
+            {
+                "name": "honda \"trance\"",
+                "file_location": "honda_trance.mp3"
+            },
+            {
+                "name": "clarus \"smooth\"",
+                "file_location": "clarus_smooth.mp3"
+            },
+            {
+                "name": "verizon \"new car\"",
+                "file_location": "verizon_new_car.mp3"
+            },
+            {
+                "name": "always \"image girl\"",
+                "file_location": "always_image_girl.mp3"
+            }
+        ],
+        "jazz": [
+            {
+                "name": "virginia power \"change\"",
+                "file_location": "virginia_power_change.mp3"
+            },
+            {
+                "name": "miller \"blues\"",
+                "file_location": "miller_blues.mp3"
+            },
+            {
+                "name": "sears \"ba-ba-da-ba-da\"",
+                "file_location": "sears_ba-ba-da-ba-da.mp3"
+            },
+            {
+                "name": "leggs \"piropos\"",
+                "file_location": "leggs_piropos.mp3"
+            },
+            {
+                "name": "e trade \"get it done\"",
+                "file_location": "e_trade_get_it_done.mp3"
+            },
+            {
+                "name": "sears \"scenic route\"",
+                "file_location": "sears_scenic_route.mp3"
+            },
+            {
+                "name": "pactel \"security\"",
+                "file_location": "pactel_security.mp3"
+            },
+            {
+                "name": "acura \"silence\"",
+                "file_location": "acura_silence.mp3"
+            },
+            {
+                "name": "miller \"slow blues\"",
+                "file_location": "miller_slow_blues.mp3"
+            },
+            {
+                "name": "mcdonald's \"jungle book\"",
+                "file_location": "mcdonalds_jungle_book.mp3"
+            }
+        ],
+        "orchestral": [
+            {
+                "name": "mazda \"sci-fi\"",
+                "file_location": "mazda_sci-fi.mp3"
+            },
+            {
+                "name": "disney \"magic\"",
+                "file_location": "disney_magic.mp3"
+            },
+            {
+                "name": "clarinex \"world\"",
+                "file_location": "clarinex_world.mp3"
+            },
+            {
+                "name": "energizer \"chateau\"",
+                "file_location": "energizer_chateau.mp3"
+            },
+            {
+                "name": "morgan stanley \"house\"",
+                "file_location": "morgan_stanley_house.mp3"
+            },
+            {
+                "name": "gatorade propel \"something's new\"",
+                "file_location": "gatorade_propel_somethings_new.mp3"
+            },
+            {
+                "name": "gatorade \"antiphysics\"",
+                "file_location": "gatorade_antiphysics.mp3"
+            },
+            {
+                "name": "life \"mornings\"",
+                "file_location": "life_mornings.mp3"
+            },
+            {
+                "name": "mcdonald's \"artist\"",
+                "file_location": "mcdonalds_artist.mp3"
+            },
+            {
+                "name": "bisquick \"shh\"",
+                "file_location": "bisquick_shh.mp3"
+            },
+            {
+                "name": "virginia_slims \"waltz\"",
+                "file_location": "virginia_slims_waltz.mp3"
+            },
+            {
+                "name": "bachmann trains \"holiday\"",
+                "file_location": "bachmann_trains_holiday.mp3"
+            },
+            {
+                "name": "the tic \"promo\"",
+                "file_location": "the_tic_promo.mp3"
+            }
+        ],
+        "ethereal": [
+            {
+                "name": "honda \"fortune telling\"",
+                "file_location": "honda_fortune_telling.mp3"
+            },
+            {
+                "name": "ge \"invisible\"",
+                "file_location": "ge_invisible.mp3"
+            },
+            {
+                "name": "intel \"travel\"",
+                "file_location": "intel_travel.mp3"
+            },
+            {
+                "name": "mci \"wall\"",
+                "file_location": "mci_wall.mp3"
+            },
+            {
+                "name": "sears \"show me \"",
+                "file_location": "sears_show_me.mp3"
+            },
+            {
+                "name": "nike \"snowplow\"",
+                "file_location": "nike_snowplow.mp3"
+            },
+            {
+                "name": "sears \"virtual bob\"",
+                "file_location": "sears_virtual_bob.mp3"
+            },
+            {
+                "name": "fullerton museum \"boomtown\"",
+                "file_location": "fullerton_museum_boomtown.mp3"
+            },
+            {
+                "name": "sears \"sense of feel\"",
+                "file_location": "sears_sense_of_feel.mp3"
+            },
+            {
+                "name": "clorox \"sense\"",
+                "file_location": "clorox_sense.mp3"
+            },
+            {
+                "name": "sherwin williams \"colors\"",
+                "file_location": "sherwin_williams_colors.mp3"
+            }
+        ],
+        "alternative": [
+            {
+                "name": "sports circus \"power \"",
+                "file_location": "sports_circus_power.mp3"
+            },
+            {
+                "name": "jc penny \"jeans\"",
+                "file_location": "jc_penny_jeans.mp3"
+            },
+            {
+                "name": "ea sports \"no contest\"",
+                "file_location": "ea_sports_no_contest.mp3"
+            },
+            {
+                "name": "sears \"handoff\"",
+                "file_location": "sears_handoff.mp3"
+            },
+            {
+                "name": "sports circus \"gotcha\"",
+                "file_location": "sports_circus_gotcha.mp3"
+            },
+            {
+                "name": "sears \"big sound\"",
+                "file_location": "sears_big_sound.mp3"
+            },
+            {
+                "name": "toyota \"powerglide\"",
+                "file_location": "toyota_powerglide.mp3"
+            },
+            {
+                "name": "air touch \"conversation\"",
+                "file_location": "air_touch_conversation.mp3"
+            }
+        ],
+        "vocals": [
+            {
+                "name": "carson's \"you got the look \"",
+                "file_location": "carsons_you_got_the_look.mp3"
+            },
+            {
+                "name": "sears \"deck the halls\"",
+                "file_location": "sears_deck_the_halls.mp3"
+            },
+            {
+                "name": "winn dixie \"people\"",
+                "file_location": "winn_dixie_people.mp3"
+            },
+            {
+                "name": "sears \"harbor\"",
+                "file_location": "sears_harbor.mp3"
+            },
+            {
+                "name": "alta dena \"drinkable\"",
+                "file_location": "alta_dena_drinkable.mp3"
+            },
+            {
+                "name": "masterlock \"stop children\"",
+                "file_location": "masterlock_stop_children.mp3"
+            },
+            {
+                "name": "gatorade \"the power within\"",
+                "file_location": "gatorade_the_power_within.mp3"
+            },
+            {
+                "name": "target \"sunshine\"",
+                "file_location": "target_sunshine.mp3"
+            }
+        ],
+        "good": [
+            {
+                "name": "sharp's \"party\"",
+                "file_location": "sharps_party.mp3"
+            },
+            {
+                "name": "northland \"down by me\"",
+                "file_location": "northland_down_by_me.mp3"
+            },
+            {
+                "name": "cadillac \"the ride\"",
+                "file_location": "cadillac_the_ride.mp3"
+            },
+            {
+                "name": "phillips 66 \"invisible\"",
+                "file_location": "phillips_66_invisible.mp3"
+            },
+            {
+                "name": "total \"picnic\"",
+                "file_location": "total_picnic.mp3"
+            },
+            {
+                "name": "jac shop \"five\"",
+                "file_location": "jac_shop_five.mp3"
+            },
+            {
+                "name": "chevy \"homecoming\"",
+                "file_location": "chevy_homecoming.mp3"
+            },
+            {
+                "name": "air touch \"zydeco\"",
+                "file_location": "air_touch_zydeco.mp3"
+            }
+        ],
+        "quirky": [
+            {
+                "name": "switchboard \"this way\"",
+                "file_location": "switchboard_this_way.mp3"
+            },
+            {
+                "name": "avery \"bananas\"",
+                "file_location": "avery_bananas.mp3"
+            },
+            {
+                "name": "quaker oats \"huh!\"",
+                "file_location": "quaker_oats_huh.mp3"
+            },
+            {
+                "name": "very fine \"marathon\"",
+                "file_location": "very_fine_marathon.mp3"
+            },
+            {
+                "name": "pringles \"corn fever\"",
+                "file_location": "pringles_corn_fever.mp3"
+            },
+            {
+                "name": "lazy_boy \"enjoy\"",
+                "file_location": "lazy_boy_enjoy.mp3"
+            },
+            {
+                "name": "long john silver \"shrimp\"",
+                "file_location": "long_john_silvers_shrimp.mp3"
+            },
+            {
+                "name": "sherwin williams \"questions\"",
+                "file_location": "sherwin_williams_questions.mp3"
+            },
+            {
+                "name": "roy rodgers \"airplane\"",
+                "file_location": "roy_rodgers_airplane.mp3"
+            }
+        ],
+        "world": [
+            {
+                "name": "honda \"world\"",
+                "file_location": "honda_world.mp3"
+            },
+            {
+                "name": "herbal essence \"chant\"",
+                "file_location": "herbal_essence_chant.mp3"
+            },
+            {
+                "name": "iams \"more\"",
+                "file_location": "iams_more.mp3"
+            },
+            {
+                "name": "web tv \"something different\"",
+                "file_location": "web_tv_something_different.mp3"
+            },
+            {
+                "name": "juicy juice \"ting ting tang\"",
+                "file_location": "juicy_juice_ting_ting_tang.mp3"
+            },
+            {
+                "name": "phillips 66 \"fresh\"",
+                "file_location": "phillips_66_fresh.mp3"
+            },
+            {
+                "name": "hanes \"springtime \"",
+                "file_location": "hanes_springtime.mp3"
+            },
+            {
+                "name": "chilean fruit \"centuries\"",
+                "file_location": "chilean_fruit_centuries.mp3"
+            }
+        ],
+        "childrens": [
+            {
+                "name": "chipmunks \"montage\" (3:50)",
+                "file_location": "chipmunks.mp3"
+            }
+        ]
+    },
+    "miscAssets":{
+
+    }
+}
