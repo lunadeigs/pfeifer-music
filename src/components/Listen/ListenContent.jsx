@@ -21,7 +21,7 @@ const ListenContent = (props) => {
         "good": "good times/americana",
         "quirky": "quirky",
         "world": "world",
-        "childrens": "childrens' projects"
+        "childrens": "chipmunks montage"
     }
 
     const toggleAudioOpen = (name='') => {
