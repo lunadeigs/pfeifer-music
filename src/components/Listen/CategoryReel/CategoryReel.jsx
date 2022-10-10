@@ -29,7 +29,10 @@ const CategoryReel = (props) => {
                                 }
                             </div>
                             <div className="half-audio-list">
-                                <p className="childrens-summary">Pfeifer Music Partners' lead composer, Howard Pfeifer, has an extensive background in music for children. Howard arranged, produced, and was the singing voice of “Alvin” for more than 150 songs for “Alvin and The Chipmunks” for six seasons their 1980s television series, and several CDs. Of the nearly 2000 commercials Howard has composed, a significant portion, for clients such as Hasbro, Mattel, Fisher-Price, McDonald's, Disney World, Nintendo, and Kellogg's, have been directed towards children.</p>
+                                <p className="childrens-summary">Howard Pfeifer, Pfeifer Music Partners lead composer, arranged, music
+                                directed and was the singing voice of “Alvin” for more than 150 songs
+                                for “Alvin and The Chipmunks” for six seasons of their 1980s television
+                                series, as well as several Chipmunks albums.</p>
                             </div>
                         </div>
                         :

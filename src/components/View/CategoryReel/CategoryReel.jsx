@@ -5,14 +5,13 @@ import Player from '../Player';
 import assetJson from '../../../assetList.json';
 
 const CategoryReel = (props) => {
-    const [currentVideoPath, setCurrentVideoPath] = useState("Busch_Nascar.wmv");
+    const [currentVideoPath, setCurrentVideoPath] = useState("publix_snowflake.mp4");
     
     const toggleVideoOpen = () => {
         props.setVideoOpen(value => !value);
     }
 
     return(
-
         <div className='category-reel'>
             {
                 props.videoOpen ?

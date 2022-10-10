@@ -91,7 +91,7 @@ const ListenSidebar = (props) => {
             <Link to='/listen/childrens' style={{ textDecoration: 'none' }}>
                 <p className={ location.pathname === '/listen/childrens' ? "listen-sidebar-text listen-sidebar-text-selected listen-childrens" : "listen-sidebar-text listen-childrens" }>
                     <img src={ Note } className="sidebar-note" alt=' '/>
-                    childrens' projects
+                    chipmunks montage
                 </p>
             </Link>
             

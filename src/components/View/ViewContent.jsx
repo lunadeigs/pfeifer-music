@@ -28,7 +28,10 @@ const ViewContent = (props) => {
 
             {
                 location.pathname.split('/view/')[1] !== undefined ?
-                    <CategoryReel videoOpen={ props.videoOpen } setVideoOpen={ props.setVideoOpen } category={location.pathname.split('/view/')[1]} />
+                    location.pathname.split('/view/')[1] === 'general' ?
+                        <GeneralReel videoOpen={ props.videoOpen } setVideoOpen={ props.setVideoOpen } category={location.pathname.split('/view/')[1]} />
+                        :
+                        <CategoryReel videoOpen={ props.videoOpen } setVideoOpen={ props.setVideoOpen } category={location.pathname.split('/view/')[1]} />
                     :
                     null
             }

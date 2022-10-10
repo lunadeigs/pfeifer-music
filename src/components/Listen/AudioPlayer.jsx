@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { SpectrumVisualizer, SpectrumVisualizerTheme, AudioVisualizerEvents } from 'react-audio-visualizers';
+import AudioSpectrum from 'react-audio-spectrum';
 
 import Note from "../../Image_Assets/Pfeifer_Note.png";
 import assetList from '../../assetList.json'
@@ -9,50 +10,22 @@ import { render } from '@testing-library/react';
 
 const AudioPlayer = (props) => {
     const audioRef = useRef(null);
-    const audioVisRef = useRef(null);
-    const mainEventRef = useRef(null);
-
-    const [firstLoad, setFirstLoad] = useState(true);
-    const [firstMainAction, setFirstMainAction] = useState(true);
-    const [playing, setPlaying] = useState(false);
-    
-    const [heldPlayFunction, setHeldPlayFunction] = useState({});
+    const [playing, setPlaying] = useState(true);
 
     const handlePlayPause = (event, payload) => {
-        if(event === "LOADED" && firstLoad){
-            console.log("Initial Play");
-            setPlaying(value => !value);
-            heldPlayFunction.play();
-            setFirstLoad(value => !value);
-        }else if(playing){
+        if(playing){
             audioRef.current.pause();
-            setPlaying(value => !value);
-            console.log("pause");
-        }else{
-            console.log("Play");
-            setPlaying(value => !value);
-            audioRef.current.play()
-        }
+          }else{
+            audioRef.current.play();
+          }
+          setPlaying(value => !value);
     }
-
-    const mainActionRender = (playPauseObject) => {
-        if(firstMainAction){
-            setHeldPlayFunction(playPauseObject);
-            setFirstMainAction(value => !value);
-        }
-        
-        return {
-            id: 'mainActionContainer',
-            node: <button onClick={playPauseObject.play}>Play</button>,
-        }
-    };
 
     const closePause = () => {
         if(playing){
             setPlaying(value => !value);
             console.log("Close Pause");
             audioRef.current.pause();
-            heldPlayFunction.pause();
         }
     }
 
@@ -71,21 +44,22 @@ const AudioPlayer = (props) => {
                 assetList.listenAssets[props.category].find(value => value.name === props.audioName) === undefined ?
                     null
                     :
-                        <SpectrumVisualizer
-                            audio={ "./static/sound_assets/" + props.category + '/' + assetList.listenAssets[props.category].find(value => value.name === props.audioName).file_location }
-                            theme={SpectrumVisualizerTheme.radialSquaredBars }
-                            colors={['#336699', '#26a69a']}
-                            iconsColor={ '#336699' }
-                            showMainActionIcon={ true }
-                            backgroundColor="rgb(204, 4, 51)"
-                            showLoaderIcon
-                            volume={ 1 }
-                            highFrequency={ 14000 }
-                            lowFrequency={ 20 }
-                            radius={ 80 }
-                            onEvent={ handlePlayPause }
-                            mainActionRender={ mainActionRender }
-                        />
+                    <AudioSpectrum
+                        id="audio-canvas"
+                        height={200}
+                        width={320}
+                        audioId={'audio-player-sound'}
+                        capColor={'blue'}
+                        capHeight={2}
+                        meterWidth={32}
+                        meterCount={11}
+                        meterColor={[
+                        {stop: 0, color: '#f00'},
+                        {stop: 0.5, color: '#0CD7FD'},
+                        {stop: 1, color: 'red'}
+                        ]}
+                        gap={4}
+                    />
             }
 
             {
@@ -94,15 +68,16 @@ const AudioPlayer = (props) => {
                     :
                     <audio 
                         id="audio-player-sound" 
-                        ref={ audioRef } 
-                        muted
+                        ref={ audioRef }
                         src={ 
                             "./static/sound_assets/" + props.category + '/' + assetList.listenAssets[props.category].find(value => value.name === props.audioName).file_location 
                         }
-                        autoPlay={ false }
+                        autoPlay={ true }
                         onEnded={ props.toggleAudioOpen }
                     />
             }
+
+            <img onClick={ handlePlayPause } src={ playing ? Pause : Play } className="play_pause" alt={playing ? "pause" : "play"} />
         </div>
     )
 }
