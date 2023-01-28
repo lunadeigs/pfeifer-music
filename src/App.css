@@ -10,12 +10,25 @@ body {
   margin: 0px;
 }
 
+/*
+Original: rgb(204, 4, 51) (Original BG) -- cc0433
+
+Saturated Alt 1: #e50026 (Alt BG 1)
+
+Lighter Alt 1: #fa0a42 (Alt BG 2)
+
+Darkter Alt: #a30329 (Alt BG 3)
+
+Saturated & Darker Alt: #b7001e (Alt BG 3)
+
+*/
+
 .App {
   margin-right: auto;
   margin-left: auto;
   width: 760px;
   height: 540px;
-  background-color: rgb(204, 4, 51);
+  background-color: #b7001e;
   display: flex;
   flex-direction: column;
 }
@@ -138,11 +151,11 @@ body {
 }
 
 .view-sidebar-title:active{
-  color:rgb(204, 4, 51);
+  color: #b7001e;
 }
 
 .view-sidebar-text:active{
-  color: rgb(204, 4, 51);
+  color: #b7001e;
 }
 
 .view-sidebar-title:active .sidebar-note{
@@ -255,53 +268,6 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-/* Mini Reel Classes */
-.mini-reel{
-  margin-left: 35px;
-  margin-right: 35px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 5px 0 5px 0;
-  height: 80px;
-  width: 50px;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15%;
-  color: black;
-}
-
-.mini-reel:hover{
-  opacity: 0.5;
-  cursor: pointer;
-}
-
-
-
-.mini-reel-screencap{
-  /* box-sizing: border-box; */
-  height: 75%;
-  width: 80px;
-  border-radius: 12%;
-  box-shadow: 3px 3px 7.5px black;
-  margin-bottom: 5px;
-}
-
-.mini-reel-text{
-  text-align: center;
-  font-size: 12px;
-  margin: 0px;
-  height: 25%;
-  width: 250%;
-  color: white;
-  font-weight: bolder;
-  text-shadow: 3px 3px 7.5px black;
-  margin-bottom: -1px;
-  margin-top: -1px;
 }
 
 /* Player Classes */
@@ -567,19 +533,19 @@ body {
 }
 
 .listen-sidebar-title:active{
-  color:rgb(204, 4, 51);
+  color:#b7001e;
 }
 
 .listen-sidebar-subtitle:active{
-  color: rgb(204, 4, 51);
+  color: #b7001e;
 }
 
 .listen-sidebar-title:active .listen-sidebar-subtitle{
-  color:rgb(204, 4, 51);
+  color:#b7001e;
 }
 
 .listen-sidebar-text:active{
-  color: rgb(204, 4, 51);
+  color: #b7001e;
 }
 
 .listen-sidebar-title:active .sidebar-note{
@@ -651,36 +617,13 @@ body {
   font-size: 13px;
 }
 
-/* Mini Audio Classes */
-.mini-audio {
-  font-weight: bold;
-  line-height: 23px;
-  /* margin: 5px; */
-}
-
-.mini-audio:hover{
-  color: white;
-  cursor: pointer;
-}
-
-.childrens-mini-audio {
-  font-weight: bold;
-  line-height: 23px;
-  /* margin: 5px; */
-}
-
-.childrens-mini-audio:hover{
-  color: white;
-  cursor: pointer;
-}
-
 .particle-animation{
   height: 200px;
   opacity: 100%;
 }
 
 .play_pause{
-  height: 40px;
+  height: 80px;
   position: absolute;
   margin-top: 250px;
   margin-left: 10px;

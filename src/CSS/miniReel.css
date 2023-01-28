@@ -1,0 +1,172 @@
+/* Specific Animation Helpers */
+/* .view-contemporary{
+    -webkit-animation-delay: 1.05s;
+    animation-delay: 1.05s;
+}
+  
+  .view-moods{
+    -webkit-animation-delay: 1.35s;
+    animation-delay: 1.35s;
+  }
+  
+  .view-orchestral{
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+  }
+  
+  .view-spanish{
+    -webkit-animation-delay: 1.65s;
+    animation-delay: 1.65s;
+  } */
+
+.test-class{
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  animation-name: mini-reel-animation;
+}
+
+/* Category Reel Classes */
+/* .category-reel{
+    padding: 0;
+    width: 95%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    height: 301px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  } */
+
+
+
+/* Mini Reel Classes */
+.mini-reel{
+  margin-left: 35px;
+  margin-right: 35px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px 0 5px 0;
+  height: 80px;
+  width: 50px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15%;
+  color: black;
+
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.mini-reel:hover{
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.mini-reel-screencap{
+  /* box-sizing: border-box; */
+  height: 75%;
+  width: 80px;
+  border-radius: 12%;
+  box-shadow: 3px 3px 7.5px black;
+  margin-bottom: 5px;
+}
+
+.mini-reel-text{
+  text-align: center;
+  font-size: 12px;
+  margin: 0px;
+  height: 25%;
+  width: 250%;
+  color: white;
+  font-weight: bolder;
+  text-shadow: 3px 3px 7.5px black;
+  margin-bottom: -1px;
+  margin-top: -1px;
+}
+/* Animations */
+
+@-webkit-keyframes mini-reel-animation {
+    0% {
+      opacity: 0;
+      transform: translateY(50%);
+    }
+    60% {
+      transform: translateY(0%);
+      opacity: 0.95;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+  
+@keyframes mini-reel-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  60% {
+    transform: translateY(0%);
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Mini Audio Classes */
+.mini-audio {
+  font-weight: bold;
+  line-height: 23px;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.mini-audio:hover{
+  color: white;
+  cursor: pointer;
+}
+
+.childrens-mini-audio {
+  font-weight: bold;
+  line-height: 23px;
+  /* margin: 5px; */
+}
+
+.childrens-mini-audio:hover{
+  color: white;
+  cursor: pointer;
+}
+
+/* Audio Title Animations */
+@-webkit-keyframes audio-title-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  60% {
+    transform: translateY(0%);
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes audio-title-animation {
+0% {
+  opacity: 0;
+  transform: translateY(50%);
+}
+60% {
+  transform: translateY(0%);
+  opacity: 0.95;
+}
+100% {
+  opacity: 1;
+}
+}

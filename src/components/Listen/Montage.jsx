@@ -30,14 +30,14 @@ const Montage = (props) => {
                         height={200}
                         width={320}
                         audioId={'audio-player-sound'}
-                        capColor={'blue'}
+                        capColor={'red'}
                         capHeight={2}
                         meterWidth={32}
                         meterCount={11}
                         meterColor={[
-                        {stop: 0, color: '#f00'},
-                        {stop: 0.5, color: '#0CD7FD'},
-                        {stop: 1, color: 'red'}
+                            {stop: 0, color: '#f00'},
+                            {stop: 0.5, color: '#0CD7FD'},
+                            {stop: 1, color: 'red'}
                         ]}
                         gap={4}
                 />
@@ -46,7 +46,7 @@ const Montage = (props) => {
                     id="audio-player-sound" 
                     ref={ audioRef }
                     src={ 
-                        "./static/sound_assets/montage/" + assetList.listenAssets['montage'].file_location 
+                        process.env.PUBLIC_URL + "/static/sound_assets/montage/" + assetList.listenAssets['montage'].file_location 
                     }
                     autoPlay={ true }
                 />

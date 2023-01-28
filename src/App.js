@@ -1,4 +1,4 @@
-import {HashRouter as BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import React, { useState } from 'react';
 import './App.css';
@@ -18,11 +18,15 @@ function App() {
   const [playVar, setPlayVar] = useState(Sound.status.STOPPED);
   
   const pauseMusic = () => {
-    setPlayVar(Sound.status.PAUSED)
+    if(playVar !== Sound.status.PAUSED){
+      setPlayVar(Sound.status.PAUSED);
+    }
   }
 
   const playMusic = () => {
-    setPlayVar(Sound.status.PLAYING);
+    if(playVar !== Sound.status.PLAYING){
+      setPlayVar(Sound.status.PLAYING);
+    }
   }
 
   return (
@@ -31,11 +35,11 @@ function App() {
       <BrowserRouter>
         
         <Sound
-            url="./static/sound_assets/montage/montage.mp3"
+            url={ process.env.PUBLIC_URL + "/static/sound_assets/montage/montage.mp3" }
             position={21100}
             playStatus={ playVar }
             autoLoad={ true }
-          />
+        />
 
         <Navbar />
         
