@@ -1,0 +1,81 @@
+.control-row{
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    bottom: 0;
+    overflow: hidden;
+    opacity: 75%;
+    border-radius: 0 0 15px 15px;
+}
+
+.control-row-hidden{
+    position: absolute;
+    top: 100%;
+    transition: all .3s ease-out;
+    background: grey;
+    height: 50%;
+    width: 100%;
+    display: inline-block;
+}
+
+.control-row:hover > .control-row-hidden{
+    top: 50%;
+}
+
+/* Buttons */
+
+.control-play-pause{
+    position: absolute;
+    left: 10%;
+    top: 8%;
+    height: 85%;
+}
+
+.control-restart{
+    position: absolute;
+    left: 2%;
+    top: 5%;
+    height: 85%;
+}
+
+/* End of Buttons */
+
+.progress-bar{
+    position:absolute;
+    top: 28%;
+    left: 18%;
+    border-radius: 500px !important;
+    width: 77%;
+    background-color: white;
+    height: 45%;
+    margin: 0;
+}
+
+.progress-bar-filled{
+    background-color: #3a3a3a;
+    border-radius: 0;
+    position: absolute;
+    left: 0;
+    height: 100%;
+}
+
+/* REF CODE */
+
+.progress-bar.bg-actual {
+    background: #b445f5;
+    border-radius: 0;
+}
+  
+.progress-bar.bg-projected {
+    background: blue;
+    position: relative;
+}
+.progress-bar.bg-projected:before {
+    width: 30px;
+    height: 30px;
+    border-radius:0 500px 500px 0;
+    background-color: #b445f5;    
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+}

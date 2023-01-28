@@ -4,12 +4,78 @@ import MiniReel from './MiniReel';
 import Player from '../Player';
 import assetJson from '../../../assetList.json';
 
+import '../../../CSS/miniReel.css'
+import { useEffect } from 'react';
+
 const CategoryReel = (props) => {
     const [currentVideoPath, setCurrentVideoPath] = useState("publix_snowflake.mp4");
     
     const toggleVideoOpen = () => {
         props.setVideoOpen(value => !value);
     }
+
+    /*
+        -webkit-animation-delay: 1.2s;
+        animation-delay: 1.2s;
+    */
+    function buildNewMiniReel(item, key){
+        return(
+            <div 
+                key={ key } 
+                className="mini-reel"
+                style={ dynamicAnimationStyle(key) } 
+                onClick={ () => { 
+                    setCurrentVideoPath(item.video_path) 
+                    toggleVideoOpen()
+                } 
+            }>
+                { props.screencapAssets[props.category][item.screencap_path] }
+                {/* <img className="mini-reel-screencap" src={ process.env.PUBLIC_URL + "/static/screencap_assets/" + props.category + "/" + item.screencap_path } alt={ props.name } loading="eager"/> */}
+                <p className="mini-reel-text">{ item.name.split("\"")[0]}</p>
+                <p className="mini-reel-text">"{ item.name.split("\"")[1] }"</p>
+                <p className="mini-reel-text">{ item.name.split("\"")[2] }</p>
+            </div>
+        )
+    }
+
+    const [currentMiniReels, setCurrentMiniReels] = useState(assetJson.viewAssets[props.category].map(
+        (item, key) => {
+        return buildNewMiniReel(item, key)
+        }
+    ));
+
+    const [currentStartKey, setCurrentStartKey] = useState(0);
+
+    function dynamicAnimationStyle(itemKey){
+        let seconds;
+        if(itemKey >= 20){
+            seconds = Math.floor((itemKey-20) / 4) * 0.15;
+        }else{
+            seconds = Math.floor(itemKey / 4) * 0.15;
+        }
+
+        return({
+            "WebkitAnimationDuration": "2s",
+            "animationDuration": "2s",
+            "WebkitAnimationDelay": seconds + "s",
+            "animationDelay": seconds + "s",
+            "animationName": "mini-reel-animation"
+        })
+    }
+
+    useEffect(() => {
+        const newMiniReels = assetJson.viewAssets[props.category].map((item, key) => {
+            return buildNewMiniReel(item, key+currentStartKey)
+        })
+
+        if(currentStartKey === 0){
+            setCurrentStartKey(20)
+        }else{
+            setCurrentStartKey(0);
+        }
+
+        setCurrentMiniReels(newMiniReels);
+    }, [props.category])
 
     return(
         <div className='category-reel'>
@@ -21,17 +87,7 @@ const CategoryReel = (props) => {
                         toggleVideoOpen={ toggleVideoOpen }
                     />
                     :
-                    assetJson.viewAssets[props.category].map((item, key) => {
-                        return <div className="mini-reel" onClick={ () => { 
-                            setCurrentVideoPath(item.video_path) 
-                            toggleVideoOpen()
-                        } }>
-                            <img className="mini-reel-screencap" src={ "./static/screencap_assets/" + props.category + "/" + item.screencap_path } alt={ props.name }/>
-                            <p className="mini-reel-text">{ item.name.split("\"")[0]}</p>
-                            <p className="mini-reel-text">"{ item.name.split("\"")[1] }"</p>
-                            <p className="mini-reel-text">{ item.name.split("\"")[2] }</p>
-                        </div>
-                    })
+                    currentMiniReels.map(val => val)
             }
         </div>
     )

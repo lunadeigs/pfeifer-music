@@ -5,13 +5,80 @@ import { useLocation } from 'react-router-dom';
 import AudioPlayer from '../AudioPlayer';
 
 import assetList from '../../../assetList.json'
+import '../../../CSS/miniReel.css'
 
 
 const CategoryReel = (props) => {
+    const [currentStartKey, setCurrentStartKey] = useState(0);
+
+    function marginStyle(){
+        return(
+            (props.category) === "orchestral"?
+                1
+                :
+                props.category === "ethereal" ?
+                    3
+                    :
+                    48 / (assetList.listenAssets[props.category].length)
+        )
+    }
+
+    function dynamicStyle(itemKey){
+        let seconds;
+        if(itemKey >= 30){
+            seconds = (itemKey-20) * 0.1;
+        }else{
+            seconds = itemKey * 0.1;
+        }
+
+        return({
+            WebkitAnimationDuration: "1s",
+            animationDuration: "1s",
+            WebkitAnimationDelay: seconds + "s",
+            animationDelay: seconds + "s",
+            animationName: "audio-title-animation"
+        })
+    }
+
+    function buildListenTitle(item, key){
+        return(
+            <p style={{
+                margin:( (props.category) === "orchestral"?
+                    1
+                    :
+                    props.category === "ethereal" ?
+                        3
+                        :
+                        48 / (assetList.listenAssets[props.category].length)
+                ),
+                ...dynamicStyle(key) 
+            }} 
+                key={ key } 
+                className="mini-audio" 
+                onClick={ () => { props.toggleAudioOpen(item.name) }}>{ item.name }
+            </p>
+        )
+    }
+
+    const [currentAudioTitles, setCurrentAudioTitles] = useState(assetList.listenAssets[props.category].map(
+        (item, key) => {
+            return buildListenTitle(item, key + currentStartKey)
+        })
+    );
+
     useEffect(() => {
-        console.log(props.category);
-        console.log(assetList);
-    }, [])
+        const newTitles = assetList.listenAssets[props.category].map((item, key) => {
+            return buildListenTitle(item, key + currentStartKey)
+        })
+
+        if(currentStartKey === 0){
+            setCurrentStartKey(30)
+        }else{
+            setCurrentStartKey(0);
+        }
+
+        setCurrentAudioTitles(newTitles);
+    }, [props.category])
 
     return(
         <div className='category-reel'>
@@ -37,20 +104,7 @@ const CategoryReel = (props) => {
                         </div>
                         :
                         <div className="audio-list">
-                            {
-                                assetList.listenAssets[props.category].map((item, key) => {
-                                    return <p style={{
-                                        margin: (props.category) === "orchestral"?
-                                            1
-                                            :
-                                            props.category === "ethereal" ?
-                                                3
-                                                :
-                                                48 / (assetList.listenAssets[props.category].length)
-                                        
-                                    }} key={ key } className="mini-audio" onClick={ () => { props.toggleAudioOpen(item.name) }}>{ item.name }</p>
-                                })
-                            }
+                            { currentAudioTitles.map(value => value) }
                         </div>
             }
             

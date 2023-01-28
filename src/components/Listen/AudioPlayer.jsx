@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { SpectrumVisualizer, SpectrumVisualizerTheme, AudioVisualizerEvents } from 'react-audio-visualizers';
+import React, { useState, useRef } from 'react';
 import AudioSpectrum from 'react-audio-spectrum';
 
 import Note from "../../Image_Assets/Pfeifer_Note.png";
@@ -29,6 +28,13 @@ const AudioPlayer = (props) => {
         }
     }
 
+    const buttonColor = "black"
+
+    const svgStyle = {
+        height: "40px",
+        width: "40px"
+    }
+
     return(
         <div className="player">
             <p className="back-button" onClick={ () => {
@@ -49,14 +55,14 @@ const AudioPlayer = (props) => {
                         height={200}
                         width={320}
                         audioId={'audio-player-sound'}
-                        capColor={'blue'}
+                        capColor={'#b7001e'}
                         capHeight={2}
                         meterWidth={32}
                         meterCount={11}
                         meterColor={[
-                        {stop: 0, color: '#f00'},
-                        {stop: 0.5, color: '#0CD7FD'},
-                        {stop: 1, color: 'red'}
+                        {stop: 0, color: '#ff0000'},
+                        {stop: 0.2, color: '#FFFF00'}, // 
+                        {stop: 0.6, color: '#00cb00'} // 008000
                         ]}
                         gap={4}
                     />
@@ -70,14 +76,35 @@ const AudioPlayer = (props) => {
                         id="audio-player-sound" 
                         ref={ audioRef }
                         src={ 
-                            "./static/sound_assets/" + props.category + '/' + assetList.listenAssets[props.category].find(value => value.name === props.audioName).file_location 
+                            process.env.PUBLIC_URL + "/static/sound_assets/" + props.category + '/' + assetList.listenAssets[props.category].find(value => value.name === props.audioName).file_location 
                         }
                         autoPlay={ true }
                         onEnded={ props.toggleAudioOpen }
                     />
             }
 
-            <img onClick={ handlePlayPause } src={ playing ? Pause : Play } className="play_pause" alt={playing ? "pause" : "play"} />
+            <div onClick={ handlePlayPause } className="play_pause" alt={playing ? "pause" : "play"} >
+                {
+                    playing ?
+                        <svg xmlns="http://www.w3.org/2000/svg" style={ svgStyle } width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke={ buttonColor } fill="none" strokeLinecap="round" strokeLinejoin="round"
+                            onClick={ props.toggleVideoPlaying }
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <rect x="6" y="5" width="4" height="14" rx="1"></rect>
+                        <rect x="14" y="5" width="4" height="14" rx="1"></rect>
+                    </svg>
+                    :
+                    <svg xmlns="http://www.w3.org/2000/svg" style={ svgStyle } width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke={buttonColor} fill="none" strokeLinecap="round" strokeLinejoin="round"
+                        onClick={ props.toggleVideoPlaying }
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M7 4v16l13 -8z"></path>
+                    </svg>
+                }
+
+            </div>
+            
+            {/* <img onClick={ handlePlayPause } src={ playing ? Pause : Play } className="play_pause" alt={playing ? "pause" : "play"} /> */}
         </div>
     )
 }
