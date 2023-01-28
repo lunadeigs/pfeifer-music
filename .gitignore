@@ -109,3 +109,5 @@ dist
 /public/static/screencap_assets
 /public/static/sound_assets
 /public/static/video_assets
+
+.DS_Store
