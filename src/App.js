@@ -1,6 +1,6 @@
 /* External dependencies */
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 /* Internal dependencies */
 import './App.css';
@@ -30,11 +30,10 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <BrowserRouter>
-
+    <Router>
+      <div className="App">
         <Navbar />
-        
+
         <Routes>
           <Route exact path='/' element={ <PreIntroAnimation />} />
           <Route exact path='/intro' element={ <IntroAnimation playMusic={ handlePlay } /> } />
@@ -44,8 +43,8 @@ function App() {
         </Routes>
 
         <Footer />
-      </BrowserRouter>
-    </div>
+      </div>
+    </Router>
   );
 }
 
