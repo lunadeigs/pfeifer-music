@@ -1,5 +1,7 @@
+/* External dependencies */
 import React from 'react';
 
+/** Contact information for home page */
 const ContactBlock = () => {
     return (
         <div className='contact-block'>

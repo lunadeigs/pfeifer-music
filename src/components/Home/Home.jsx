@@ -1,9 +1,11 @@
-import React from 'react';
-import HomeSidebar from './HomeSidebar';
+/* External dependencies */
+import React, { useEffect } from 'react';
+
+/* Internal dependencies */
+import ContactBlock from './ContactBlock';
 import HomeContent from './HomeContent';
 
-import { useEffect } from 'react';
-
+/** Home page container */
 const Home = (props) => {
     useEffect(() => {
         let ignore = false;
@@ -21,7 +23,7 @@ const Home = (props) => {
 
     return(
         <div className='main-content'>
-            <HomeSidebar />
+            <ContactBlock />
             <HomeContent />
         </div>
     )

@@ -1,16 +1,19 @@
+/* External dependencies */
 import React, { useState, useEffect } from 'react';
-
 import { useLocation } from 'react-router-dom';
-import CategoryReel from './CategoryReel/CategoryReel';
+
+/* Internal depenedencies */
+import CategoryReel from './CategoryReel';
 import Montage from './Montage';
 
+/* Content container for the listen page */
 const ListenContent = (props) => {
     const location = useLocation();
 
     const [currentAudioName, setCurrentAudioName] = useState('');
     const [childKey, setChildKey] = useState(0);
 
-    const categoryNames = {
+    const CATEGORY_NAMES = {
         "montage": "audio montage",
         "grooves": "grooves",
         "jazz": "jazz/blues",
@@ -24,7 +27,7 @@ const ListenContent = (props) => {
         "childrens": "chipmunks montage"
     }
 
-    const toggleAudioOpen = (name='') => {
+    function toggleAudioOpen(name=''){
         setChildKey(value => value + 1);
         if(!props.audioOpen){
             setCurrentAudioName(name)
@@ -41,7 +44,7 @@ const ListenContent = (props) => {
 
     return(
         <div className='view-content'>
-            <h1 className='view-content-title'>{ categoryNames[location.pathname.split('/listen/')[1]] }</h1>
+            <h1 className='view-content-title'>{ CATEGORY_NAMES[location.pathname.split('/listen/')[1]] }</h1>
             { 
                 location.pathname.split('/listen/')[1] !== undefined ? 
                     <hr className='view-content-line'/> 

@@ -1,23 +1,25 @@
-import React, { useState } from 'react';
+/* External dependencies */
+import React, { useState, useEffect } from 'react';
 
-import MiniReel from './MiniReel';
-import Player from '../Player';
-import assetJson from '../../../assetList.json';
+/* Internal dependencies */
+import Player from './Player';
+import assetJson from '../../assetList.json';
+import '../../CSS/miniReel.css'
 
-import '../../../CSS/miniReel.css'
-import { useEffect } from 'react';
-
-const CategoryReel = (props) => {
+/* Category reel for video components */
+function CategoryReel(props){
     const [currentVideoPath, setCurrentVideoPath] = useState("publix_snowflake.mp4");
+    const [currentStartKey, setCurrentStartKey] = useState(0);
+    const [currentMiniReels, setCurrentMiniReels] = useState(assetJson.viewAssets[props.category].map(
+        (item, key) => {
+            return buildNewMiniReel(item, key)
+        }
+    ));
     
-    const toggleVideoOpen = () => {
+    function toggleVideoOpen(){
         props.setVideoOpen(value => !value);
     }
 
-    /*
-        -webkit-animation-delay: 1.2s;
-        animation-delay: 1.2s;
-    */
     function buildNewMiniReel(item, key){
         return(
             <div 
@@ -37,14 +39,6 @@ const CategoryReel = (props) => {
             </div>
         )
     }
-
-    const [currentMiniReels, setCurrentMiniReels] = useState(assetJson.viewAssets[props.category].map(
-        (item, key) => {
-        return buildNewMiniReel(item, key)
-        }
-    ));
-
-    const [currentStartKey, setCurrentStartKey] = useState(0);
 
     function dynamicAnimationStyle(itemKey){
         let seconds;
@@ -92,7 +86,5 @@ const CategoryReel = (props) => {
         </div>
     )
 }
-
-//  <MiniReel key={ key }category={ props.category } screencapPath={ item.screencap_path } videoName={ item.name} toggleVideoOpen={ toggleVideoOpen } setCurrentVideoPath={ setCurrentVideoPath } videoPath={ item.video_path }/>
 
 export default CategoryReel;

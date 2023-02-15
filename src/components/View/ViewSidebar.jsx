@@ -1,9 +1,11 @@
-import { checkPropTypes } from 'prop-types';
-import React, { useState } from 'react';
-
+/* External dependencies */
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+
+/* Internal dependencies */
 import Note from '../../Image_Assets/Pfeifer_Note_Black.png'
 
+/** Side navigation bar for view page */
 const ViewSidebar = (props) => {
     const location = useLocation();
     
@@ -52,7 +54,6 @@ const ViewSidebar = (props) => {
                     spanish market
                 </p>
             </Link>
-            
         </div>
     )
 }

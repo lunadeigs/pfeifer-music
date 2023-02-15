@@ -1,15 +1,14 @@
+/* External dependencies */
 import React, { useState } from 'react';
 
+/* Internal dependencies */
 import ListenSidebar from './ListenSidebar';
 import ListenContent from './ListenContent';
-import { useEffect } from 'react';
 
+/** Container for the listen page */
 const Listen = (props) => {
     const [audioOpen, setAudioOpen] = useState(false);
-
-    useEffect(() => {
-        props.pauseMusic();
-    }, [])
+    props.pauseMusic();
     
     return(
         <div className='main-content'>

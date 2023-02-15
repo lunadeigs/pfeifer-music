@@ -1,10 +1,12 @@
+/* External Dependencies */
 import React, { useState } from 'react';
-
 import { useNavigate } from 'react-router-dom';
 
+/* Internal Dependencies */
 import Note from '../Image_Assets/Pfeifer_Note.png'
 
-const PreIntroAnimation = (props) => {
+/** Landing page before the introductory animation for the site is triggered */
+const PreIntroAnimation = () => {
     const navigate = useNavigate();
 
     const [currentClass, setCurrentClass] = useState('pre-intro-text');

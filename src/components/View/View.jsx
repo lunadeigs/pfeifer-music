@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+/* External dependencies */
+import React, { useState, useMemo } from 'react';
+
+/* Internal dependencies */
 import ViewSidebar from './ViewSidebar';
 import ViewContent from './ViewContent';
-import { useMemo } from 'react';
-
 import assetJson from '../../assetList.json';
 
+/** Container for the view page */
 const View = (props) => {
     const [videoOpen, setVideoOpen] = useState(false);
     const screencapAssets = useMemo(() => {
@@ -16,18 +18,17 @@ const View = (props) => {
                 newAssets[category][screencap["screencap_path"]] = <img className="mini-reel-screencap" src={ process.env.PUBLIC_URL + "/static/screencap_assets/" + category + "/" + screencap["screencap_path"] } alt={ screencap["name"] }/>
             }
         }
+
         return newAssets;
     }, [])
 
-    const closeVideoOpen = () => {
+    function closeVideoOpen(){
         if(videoOpen){
             setVideoOpen(value => !value);
         }
     }
 
-    useEffect(() => {
-        props.pauseMusic();
-    }, [])
+    props.pauseMusic();
 
     return(
         <div className='main-content'>

@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
-import { Route, useLocation, Link, Routes } from 'react-router-dom';
+/* External dependencies */
+import React from 'react';
+import { useLocation, Link } from 'react-router-dom';
+
+/* Internal dependencies */
 import Note from '../Image_Assets/Pfeifer_Note.png';
 
-const Navbar = (props) => {
+/** Navigation bar component */
+const Navbar = () => {
     const location = useLocation();
-    const [homeClick, setHomeClick] = useState(false);
-    const [viewClick, setViewClick] = useState(false);
-    const [listenClick, setListenClick] = useState(false);
 
     return(
         <div className={ location.pathname === '/' || location.pathname === '/intro' ? 'invisible-navbar' : 'navbar' }>
-            <Link to='/home' style={{ textDecoration: 'none' }} onClick={ () => { setHomeClick(true) }}>
+            <Link to='/home' style={{ textDecoration: 'none' }}>
                 <h2 className={ location.pathname.split('/')[1] === 'home' ? "navbar-item navbar-item-selected" : "navbar-item" }>
                     <img src={ Note } className={ location.pathname.split('/')[1] === 'home' ? "navbar-note navbar-note-selected " : "navbar-note "} alt=" "/>
                     home

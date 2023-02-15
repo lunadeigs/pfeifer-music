@@ -1,17 +1,12 @@
-import React, { useState, useRef } from 'react';
+/* External dependencies */
+import React, { useState, useRef, useEffect } from 'react';
 
-import Note from '../../Image_Assets/Pfeifer_Note.png'
-
-//import Play from '../../Image_Assets/play.svg'
-
-/* <a target="_blank" href="https://icons8.com/icon/407/rewind">Rewind</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
-import Rewind from '../../Image_Assets/rewind.svg'
-import Pause from '../../Image_Assets/pause.svg'
-
+/* Internal Dependencies */
 import assetList from '../../assetList.json';
+import Note from '../../Image_Assets/Pfeifer_Note.png'
 import PlayerControls from './PlayerControls';
-import { useEffect } from 'react';
 
+/** Handles video controls */
 function usePlayerController(videoRef){
     const [videoPaused, setVideoPaused] = useState(videoRef.paused);
 
@@ -64,56 +59,34 @@ function usePlayerController(videoRef){
 
     return([restartVideo, toggleVideoPlaying, videoPaused])
 }
-/**
- * 
- * @returns Progress Bar
- */
-function useProgressBar(currentTime, videoDuration){
-    const [videoPercentage, setVideoPercentage] = useState(0);
 
-    useEffect(() => {
-        let ignore = false;
-
-        if(!ignore){
-            setVideoPercentage((currentTime/videoDuration).toFixed(2)*100);
-        }
-
-        return(() => {
-            ignore = true;
-        })
-
-    }, [currentTime, videoDuration])
-
+/** Progress bar for video player */
+function ProgressBar(props){
     return(
         <div className="progress-bar-filled" style={{
-            width: videoPercentage + "%"
+            width: ((props.currentTime/props.videoDuration).toFixed(2)*100) + "%"
         }}></div>
     );
 }
 
-const Player = (props) => {
+/** Video player component */
+function Player(props){
     const videoRef = useRef();
     const [currentVidPath, setCurrentVidPath] = useState(process.env.PUBLIC_URL + "/static/video_assets/" + props.category + "/" + props.asset.video_path);
     const [currentVidName, setCurrentVidName] = useState(props.asset.name);
-    
-
-    const [playing, setPlaying] = useState(false);
-
     const [currentTime, setCurrentTime] = useState(0);
     const [videoDuration, setVideoDuration] = useState(0);
 
-    const barComponent = useProgressBar(currentTime, videoDuration);
+    const [restartVideo, toggleVideoPlaying, videoPaused] = usePlayerController(videoRef);
 
     function onUpdateGrabCurrentTime(){
         setCurrentTime(videoRef.current?.currentTime);
         setVideoDuration(videoRef.current?.duration);
     }
 
-    const vidStyle = {
+    const VIDEO_STYLE = {
         "backgroundColor": "black"
     }
-
-    const [restartVideo, toggleVideoPlaying, videoPaused] = usePlayerController(videoRef);
 
     return(
         <div className='player' id={ props.category === "general" && props.currentAssetIndex !== 0 ? "extra-player-margin" : null}>
@@ -144,7 +117,6 @@ const Player = (props) => {
                     onLoadStart={ () => {
                         console.log(videoRef.current);
                         videoRef.current.currentTime = 0.05;
-                        setPlaying(true)
                     }} 
                     ref={ videoRef } 
                     preload="auto" 
@@ -167,7 +139,7 @@ const Player = (props) => {
                             props.toggleVideoOpen()
                         }
                     }}
-                    style={ vidStyle }
+                    style={ VIDEO_STYLE }
                     onClick={ toggleVideoPlaying }
                     
                 />
@@ -177,7 +149,10 @@ const Player = (props) => {
                     toggleVideoPlaying={ toggleVideoPlaying}
                     videoPaused={ videoPaused }
                 >
-                    { barComponent }
+                    <ProgressBar
+                        currentTime={ currentTime }
+                        videoDuration={ videoDuration }
+                    />
                 </PlayerControls>
             </div>
 

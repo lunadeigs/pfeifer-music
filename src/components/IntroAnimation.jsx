@@ -1,10 +1,11 @@
-import { checkPropTypes } from 'prop-types';
+/* External dependencies */
 import React, { useEffect } from 'react';
-
 import { useNavigate } from 'react-router-dom';
 
+/* Internal dependencies */
 import Note from '../Image_Assets/Pfeifer_Note.png';
 
+/** Component to facilitate introduction to site */
 const IntroAnimation = (props) => {
     const navigate = useNavigate();
 

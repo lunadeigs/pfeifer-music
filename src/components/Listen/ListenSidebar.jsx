@@ -1,12 +1,15 @@
+/* External dependencies */
 import React from 'react';
-import Note from '../../Image_Assets/Pfeifer_Note_Black.png'
-
 import { Link, useLocation } from 'react-router-dom';
 
+/* Internal dependencies */
+import Note from '../../Image_Assets/Pfeifer_Note_Black.png'
+
+/** Side navigation bar for the listen page */
 const ListenSidebar = (props) => {
     const location = useLocation();
 
-    const closeAudio = () => {
+    function closeAudio(){
         if(props.audioOpen){
             props.setAudioOpen(value => !value);
         }
@@ -15,11 +18,11 @@ const ListenSidebar = (props) => {
     return (
         <div className='listen-sidebar'>
             <Link to='/listen/montage' style={{ textDecoration: 'none' }}>
-                <p className={ location.pathname === '/listen/montage' ? "listen-sidebar-title listen-sidebar-title-selected" : "listen-sidebar-title" }>
+                <div className={ location.pathname === '/listen/montage' ? "listen-sidebar-title listen-sidebar-title-selected" : "listen-sidebar-title" }>
                     <img src={ Note } className="sidebar-note" alt=' '/>
                     audio montage
                     <p className={ location.pathname === '/listen/montage' ? "listen-sidebar-subtitle listen-sidebar-subtitle-selected" : "listen-sidebar-subtitle" }>{ "(" }3.5 minute presentation{ ")" }</p>
-                </p>
+                </div>
             </Link>
             
 

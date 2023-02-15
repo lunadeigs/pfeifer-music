@@ -1,6 +1,10 @@
+/* External Dependencies */
 import React from 'react';
+
+/* Internal Dependencies */
 import Note from '../../Image_Assets/Pfeifer_Note.png';
 
+/** Main content for the home page */
 const HomePageContent = () => {
     return(
         <div className='home-page-content'>

@@ -1,13 +1,16 @@
+/* External dependencies */
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
+/* Internal dependencies */
 import GeneralReel from './GeneralReel';
-import CategoryReel from './CategoryReel/CategoryReel';
+import CategoryReel from './CategoryReel';
 
+/* Content container for the view page */
 const ViewContent = (props) => {
     const location = useLocation();
 
-    const categoryNames = {
+    const CATEGORY_NAMES = {
         "general": "general reel",
         "contemporary": "contemporary scores",
         "humor": "humor",
@@ -18,7 +21,7 @@ const ViewContent = (props) => {
 
     return(
         <div className='view-content'>
-            <h1 className='view-content-title'>{ categoryNames[location.pathname.split('/view/')[1]] }</h1>
+            <h1 className='view-content-title'>{ CATEGORY_NAMES[location.pathname.split('/view/')[1]] }</h1>
             { 
                 location.pathname.split('/view/')[1] !== undefined ? 
                     <hr className='view-content-line'/> 

@@ -1,26 +1,27 @@
+/* External dependencies */
 import React, { useState, useRef } from 'react';
 import AudioSpectrum from 'react-audio-spectrum';
 
+/* Internal dependencies */
 import Note from "../../Image_Assets/Pfeifer_Note.png";
 import assetList from '../../assetList.json'
-import Pause from '../../Image_Assets/pause.svg';
-import Play from '../../Image_Assets/play.svg';
-import { render } from '@testing-library/react';
 
+/* Audio player for listen page */
 const AudioPlayer = (props) => {
     const audioRef = useRef(null);
     const [playing, setPlaying] = useState(true);
 
-    const handlePlayPause = (event, payload) => {
+    function handlePlayPause(){
         if(playing){
             audioRef.current.pause();
-          }else{
+        }else{
             audioRef.current.play();
-          }
-          setPlaying(value => !value);
+        }
+
+        setPlaying(value => !value);
     }
 
-    const closePause = () => {
+    function closePause(){
         if(playing){
             setPlaying(value => !value);
             console.log("Close Pause");
@@ -28,9 +29,9 @@ const AudioPlayer = (props) => {
         }
     }
 
-    const buttonColor = "black"
+    const BUTTON_COLOR = "black"
 
-    const svgStyle = {
+    const SVG_STYLE = {
         height: "40px",
         width: "40px"
     }
@@ -61,8 +62,9 @@ const AudioPlayer = (props) => {
                         meterCount={11}
                         meterColor={[
                         {stop: 0, color: '#ff0000'},
-                        {stop: 0.2, color: '#FFFF00'}, // 
-                        {stop: 0.6, color: '#00cb00'} // 008000
+                        {stop: 0.2, color: '#FFA500'},
+                        {stop: 0.3, color: '#ffff00'},
+                        {stop: 0.6, color: '#00cb00'} 
                         ]}
                         gap={4}
                     />
@@ -86,7 +88,7 @@ const AudioPlayer = (props) => {
             <div onClick={ handlePlayPause } className="play_pause" alt={playing ? "pause" : "play"} >
                 {
                     playing ?
-                        <svg xmlns="http://www.w3.org/2000/svg" style={ svgStyle } width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke={ buttonColor } fill="none" strokeLinecap="round" strokeLinejoin="round"
+                        <svg xmlns="http://www.w3.org/2000/svg" style={ SVG_STYLE } width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke={ BUTTON_COLOR } fill="none" strokeLinecap="round" strokeLinejoin="round"
                             onClick={ props.toggleVideoPlaying }
                     >
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -94,7 +96,7 @@ const AudioPlayer = (props) => {
                         <rect x="14" y="5" width="4" height="14" rx="1"></rect>
                     </svg>
                     :
-                    <svg xmlns="http://www.w3.org/2000/svg" style={ svgStyle } width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke={buttonColor} fill="none" strokeLinecap="round" strokeLinejoin="round"
+                    <svg xmlns="http://www.w3.org/2000/svg" style={ SVG_STYLE } width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke={ BUTTON_COLOR } fill="none" strokeLinecap="round" strokeLinejoin="round"
                         onClick={ props.toggleVideoPlaying }
                     >
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>

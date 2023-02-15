@@ -1,27 +1,19 @@
+/* External dependencies */
 import React, { useState, useEffect } from 'react';
 
-import { useLocation } from 'react-router-dom';
+/* Internal dependencies */
+import AudioPlayer from './AudioPlayer';
+import assetList from '../../assetList.json'
+import '../../CSS/miniReel.css'
 
-import AudioPlayer from '../AudioPlayer';
-
-import assetList from '../../../assetList.json'
-import '../../../CSS/miniReel.css'
-
-
+/** Handles category reel content for the listen page */
 const CategoryReel = (props) => {
     const [currentStartKey, setCurrentStartKey] = useState(0);
-
-    function marginStyle(){
-        return(
-            (props.category) === "orchestral"?
-                1
-                :
-                props.category === "ethereal" ?
-                    3
-                    :
-                    48 / (assetList.listenAssets[props.category].length)
-        )
-    }
+    const [currentAudioTitles, setCurrentAudioTitles] = useState(assetList.listenAssets[props.category].map(
+        (item, key) => {
+            return buildListenTitle(item, key + currentStartKey)
+        })
+    );
 
     function dynamicStyle(itemKey){
         let seconds;
@@ -59,12 +51,6 @@ const CategoryReel = (props) => {
             </p>
         )
     }
-
-    const [currentAudioTitles, setCurrentAudioTitles] = useState(assetList.listenAssets[props.category].map(
-        (item, key) => {
-            return buildListenTitle(item, key + currentStartKey)
-        })
-    );
 
     useEffect(() => {
         const newTitles = assetList.listenAssets[props.category].map((item, key) => {
