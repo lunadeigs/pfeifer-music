@@ -1,20 +1,17 @@
 {
   "files": {
     "main.css": "/pfeifer-music/static/css/main.8b475f5c.css",
-    "main.js": "/pfeifer-music/static/js/main.16530037.js",
+    "main.js": "/pfeifer-music/static/js/main.fe2806ec.js",
     "static/js/787.f3755432.chunk.js": "/pfeifer-music/static/js/787.f3755432.chunk.js",
     "static/media/Pfeifer_Note.png": "/pfeifer-music/static/media/Pfeifer_Note.0b3bcebdd2d8ee2f4fc0.png",
     "static/media/Pfeifer_Note_Black.png": "/pfeifer-music/static/media/Pfeifer_Note_Black.24da76198132b04471cd.png",
-    "static/media/pause.svg": "/pfeifer-music/static/media/pause.98457ef9fdf38e2c84b49370f24076cf.svg",
-    "static/media/play.svg": "/pfeifer-music/static/media/play.e5fc94c86e4755a135d12e5f88526314.svg",
     "index.html": "/pfeifer-music/index.html",
-    "static/media/rewind.svg": "/pfeifer-music/static/media/rewind.c6a63dcbb318aac304cd1fabce9283e8.svg",
     "main.8b475f5c.css.map": "/pfeifer-music/static/css/main.8b475f5c.css.map",
-    "main.16530037.js.map": "/pfeifer-music/static/js/main.16530037.js.map",
+    "main.fe2806ec.js.map": "/pfeifer-music/static/js/main.fe2806ec.js.map",
     "787.f3755432.chunk.js.map": "/pfeifer-music/static/js/787.f3755432.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8b475f5c.css",
-    "static/js/main.16530037.js"
+    "static/js/main.fe2806ec.js"
   ]
 }
