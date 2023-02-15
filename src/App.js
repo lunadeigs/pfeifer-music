@@ -1,6 +1,6 @@
 /* External dependencies */
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 /* Internal dependencies */
 import './App.css';
@@ -30,21 +30,19 @@ function App() {
   }
 
   return (
-    <Router>
       <div className="App">
         <Navbar />
 
         <Routes>
-          <Route exact path='/' element={ <PreIntroAnimation />} />
-          <Route exact path='/intro' element={ <IntroAnimation playMusic={ handlePlay } /> } />
-          <Route exact path='/home/*' element={ <Home playMusic= { handlePlay }/>} />
-          <Route exact path='/view/*' element={ <View pauseMusic={ handlePause } /> } />
-          <Route exact path='/listen/*' element={ <Listen pauseMusic={ handlePause } />} />
+          <Route path='/' element={ <PreIntroAnimation />} />
+          <Route path='/intro' element={ <IntroAnimation playMusic={ handlePlay } /> } />
+          <Route path='/home/*' element={ <Home playMusic= { handlePlay }/>} />
+          <Route path='/view/*' element={ <View pauseMusic={ handlePause } /> } />
+          <Route path='/listen/*' element={ <Listen pauseMusic={ handlePause } />} />
         </Routes>
 
         <Footer />
       </div>
-    </Router>
   );
 }
 
