@@ -26,8 +26,8 @@ Saturated & Darker Alt: #b7001e (Alt BG 3)
 .App {
   margin-right: auto;
   margin-left: auto;
-  width: 760px;
-  height: 540px;
+  width: 1140px; /* 1140px */
+  height: 810px; /* 810px */
   background-color: #b7001e;
   display: flex;
   flex-direction: column;
@@ -746,12 +746,14 @@ Saturated & Darker Alt: #b7001e (Alt BG 3)
 /* Navbar Classes */
 
 .navbar{
-  margin: 0px;
-  height: 58px;
-  padding: 0px;
-  padding-top: 5px;
-  padding-left: 282px;
   display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  height: 10.74%;
+  padding-top: 0.7%;
+  padding-left: 37.1%;
 }
 
 .navbar-item{
@@ -761,6 +763,8 @@ Saturated & Darker Alt: #b7001e (Alt BG 3)
   margin-right: 50px;
   display: inline-flex;
   color: black;
+  height: 100%;
+  width: 30%;
 }
 
 .invisible-navbar{
@@ -787,15 +791,38 @@ Saturated & Darker Alt: #b7001e (Alt BG 3)
 }
 
 .navbar-note{
-  height: 45px;
+  height: 77.5%;
+  width: 365%;
+
+  margin: 0;
+  padding: 0;
+  margin-top: -36%;
+  margin-right: -13%;
+
+  filter: brightness(0%);
+}
+
+/* height: 45px;
   width: auto;
   display: absolute;
   margin: 0px;
   padding: 0px;
   margin-top: -17px;
   margin-right: -10px;
-  filter: brightness(0%);
-}
+  filter: brightness(0%); */
+
+/*
+height: 77.5%;
+width: 365%;
+
+margin: 0;
+padding: 0;
+margin-top: -40%;
+margin-right: -13%;
+
+filter: brightness(0%);
+
+*/
 
 .navbar-note-selected{
   filter: brightness(100%);
