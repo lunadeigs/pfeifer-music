@@ -10,28 +10,21 @@ const Navbar = () => {
     const location = useLocation();
 
     return(
-        <div className={ location.pathname === '/' || location.pathname === '/intro' ? 'invisible-navbar' : 'navbar' }>
-            <Link to='/home' style={{ textDecoration: 'none' }}>
-                <h2 className={ location.pathname.split('/')[1] === 'home' ? "navbar-item navbar-item-selected" : "navbar-item" }>
-                    <img src={ Note } className={ location.pathname.split('/')[1] === 'home' ? "navbar-note navbar-note-selected " : "navbar-note "} alt=" "/>
-                    home
-                </h2>
+        <div className={ location.pathname === '/' || location.pathname === '/intro' ? 'invisible-navbar' : 'navbar unselectable' }>
+            <Link to='/home' style={{ textDecoration: 'none' }} className={ location.pathname.split('/')[1] === 'home' ? "navbar-item navbar-item-selected" : "navbar-item" }>
+                <img src={ Note } className={ location.pathname.split('/')[1] === 'home' ? "navbar-note navbar-note-selected" : "navbar-note "} alt=" "/>
+                <span className={ location.pathname.split('/')[1] === 'home' ? "navbar-text navbar-text-selected" : "navbar-text" }>home</span>
             </Link>
             
-            <Link to='/view' style={{ textDecoration: 'none' }}>
-                <h2 className={ location.pathname.split('/')[1] === 'view' ? "navbar-item navbar-item-selected" : "navbar-item"}>
-                    <img src={ Note } className={ location.pathname.split('/')[1] === 'view' ? "navbar-note navbar-note-selected" : "navbar-note"} alt=" "/>
-                    view
-                </h2>
+            <Link to='/view' style={{ textDecoration: 'none' }} className={ location.pathname.split('/')[1] === 'view' ? "navbar-item navbar-item-selected" : "navbar-item"}>
+                <img src={ Note } className={ location.pathname.split('/')[1] === 'view' ? "navbar-note navbar-note-selected " : "navbar-note"} alt=" "/>
+                <span className={ location.pathname.split('/')[1] === 'view' ? "navbar-text navbar-text-selected" : "navbar-text" }>view</span>
             </Link>
             
-            <Link to='/listen' style={{ textDecoration: 'none' }}>
-                <h2 className={ location.pathname.split('/')[1] === 'listen' ? "navbar-item navbar-item-selected" : "navbar-item"}>
-                    <img src={ Note } className={ location.pathname.split('/')[1] === 'listen' ? "navbar-note navbar-note-selected" : "navbar-note"} alt=" "/>
-                    listen
-                </h2>
+            <Link to='/listen' style={{ textDecoration: 'none' }} className={ location.pathname.split('/')[1] === 'listen' ? "navbar-item navbar-item-selected" : "navbar-item"}>
+                <img src={ Note } className={ location.pathname.split('/')[1] === 'listen' ? "navbar-note navbar-note-selected" : "navbar-note"} alt=" "/>
+                <span className={ location.pathname.split('/')[1] === 'listen' ? "navbar-text navbar-text-selected" : "navbar-text" }>listen</span>
             </Link>
-            
         </div>
     )
 }

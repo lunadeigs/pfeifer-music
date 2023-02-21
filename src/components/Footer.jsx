@@ -13,11 +13,11 @@ const Footer = () => {
         <div className={ location.pathname === '/' || location.pathname === '/intro' ? 'invisible-navbar' : 'footer' }>
         {
             location.pathname !== '/home' ?
-                <div className='footer-content'>
-                    <img className='footer-note' src={ Note } alt=" "/>
-                    <h1 className='pfeifer-footer' >pfeifer</h1>
-                    <p className='music-partners-footer'>music partners</p>
-                </div>
+                <img 
+                    src={process.env.PUBLIC_URL + '/static/Pfeifer_Music_Footer_Logo.png'}
+                    alt={"Pfeifer Music Logo"}
+                    className="footer-logo"
+                />
                 :
                 null
         }

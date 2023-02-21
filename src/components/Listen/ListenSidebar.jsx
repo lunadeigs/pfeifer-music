@@ -9,95 +9,328 @@ import Note from '../../Image_Assets/Pfeifer_Note_Black.png'
 const ListenSidebar = (props) => {
     const location = useLocation();
 
+    const ITEM_MARGIN_STYLE = {
+        marginBottom: "-1.5%"
+    }
+
     function closeAudio(){
         if(props.audioOpen){
             props.setAudioOpen(value => !value);
         }
     }
 
-    return (
-        <div className='listen-sidebar'>
-            <Link to='/listen/montage' style={{ textDecoration: 'none' }}>
-                <div className={ location.pathname === '/listen/montage' ? "listen-sidebar-title listen-sidebar-title-selected" : "listen-sidebar-title" }>
-                    <img src={ Note } className="sidebar-note" alt=' '/>
+    return(
+        <div className='page-sidebar content-sidebar unselectable'>
+            <Link 
+                to='/listen/montage' 
+                style={{ textDecoration: 'none' }} 
+                onClick={ closeAudio }
+                className={ (location.pathname === '/listen/montage' ?
+                    "selected-sidebar-content-link" : "unselected-sidebar-content-link")
+                }
+            >
+                <img 
+                    src={ Note } 
+                    style={{
+                        marginTop: "-3%",
+                        marginBottom: "0"
+                    }}
+                    className={ location.pathname === '/listen/montage' ? 
+                        "content-sidebar-note-selected" : "content-sidebar-note" 
+                    } 
+                    alt='Music Note'
+                />
+                <p 
+                    style={{
+                        marginTop: "-3%",
+                        marginBottom: "0"
+                    }}
+                    className={ location.pathname === '/listen/montage' ? 
+                    "content-sidebar-text-selected" : "content-sidebar-text" 
+                    }
+                >
                     audio montage
-                    <p className={ location.pathname === '/listen/montage' ? "listen-sidebar-subtitle listen-sidebar-subtitle-selected" : "listen-sidebar-subtitle" }>{ "(" }3.5 minute presentation{ ")" }</p>
-                </div>
+                    <br />
+                    <span className='content-sidebar-subtitle'>(3.5 minute presentation)</span>
+                </p>
             </Link>
             
+            <hr 
+                className='content-sidebar-hr'
+                style={{
+                    marginBottom: "5%"
+                }}
+            />
 
-            <hr className='listen-sidebar-line' />
+            <Link 
+                to='/listen/grooves' 
+                style={{ textDecoration: 'none' }} 
+                onClick={ closeAudio }
+                className={ "listen-grooves " + (location.pathname === '/listen/grooves' ?
+                    "selected-sidebar-content-link" : "unselected-sidebar-content-link")
+                }
+            >
+                <img 
+                    src={ Note } 
+                    className={ location.pathname === '/listen/grooves' ? 
+                        "content-sidebar-note-selected" : "content-sidebar-note" 
+                    } 
+                    alt='Note'
+                    style={ ITEM_MARGIN_STYLE }
+                />
 
-            <Link to='/listen/grooves' style={{ textDecoration: 'none' }} onClick={ closeAudio }>
-                <p className={ location.pathname === '/listen/grooves' ? "listen-sidebar-text listen-sidebar-text-selected listen-grooves" : "listen-sidebar-text listen-grooves" }>
-                    <img src={ Note } className="sidebar-note" alt=' '/>
+                <p 
+                    className={ location.pathname === '/listen/grooves' ? 
+                    "content-sidebar-text-selected" : "content-sidebar-text" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                >
                     grooves
                 </p>
             </Link>
-            
-            <Link to='/listen/jazz' style={{ textDecoration: 'none' }} onClick={ closeAudio }>
-                <p className={ location.pathname === '/listen/jazz' ? "listen-sidebar-text listen-sidebar-text-selected listen-jazz" : "listen-sidebar-text listen-jazz" }>
-                    <img src={ Note } className="sidebar-note" alt=' '/>
+
+            <Link 
+                to='/listen/jazz' 
+                style={{ textDecoration: 'none' }} 
+                onClick={ closeAudio }
+                className={ "listen-jazz " + (location.pathname === '/listen/jazz' ?
+                    "selected-sidebar-content-link" : "unselected-sidebar-content-link")
+                }
+            >
+                <img 
+                    src={ Note } 
+                    className={ location.pathname === '/listen/jazz' ? 
+                        "content-sidebar-note-selected" : "content-sidebar-note" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                    alt='Note'
+                />
+
+                <p 
+                    className={ location.pathname === '/listen/jazz' ? 
+                    "content-sidebar-text-selected" : "content-sidebar-text" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                >
                     jazz/blues
                 </p>
             </Link>
-            
-            <Link to='/listen/orchestral' style={{ textDecoration: 'none' }} onClick={ closeAudio }>
-                <p className={ location.pathname === '/listen/orchestral' ? "listen-sidebar-text listen-sidebar-text-selected listen-orchestral" : "listen-sidebar-text listen-orchestral" }>
-                    <img src={ Note } className="sidebar-note" alt=' '/>
+
+            <Link 
+                to='/listen/orchestral' 
+                style={{ textDecoration: 'none' }} 
+                onClick={ closeAudio }
+                className={ "listen-orchestral " + (location.pathname === '/listen/orchestral' ?
+                    "selected-sidebar-content-link" : "unselected-sidebar-content-link")
+                }
+            >
+                <img 
+                    src={ Note } 
+                    className={ location.pathname === '/listen/orchestral' ? 
+                        "content-sidebar-note-selected" : "content-sidebar-note" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                    alt='Note'
+                />
+
+                <p 
+                    className={ location.pathname === '/listen/orchestral' ? 
+                    "content-sidebar-text-selected" : "content-sidebar-text" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                >
                     orchestral
                 </p>
             </Link>
-            
-            <Link to='/listen/ethereal' style={{ textDecoration: 'none' }} onClick={ closeAudio }>
-                <p className={ location.pathname === '/listen/ethereal' ? "listen-sidebar-text listen-sidebar-text-selected listen-ethereal" : "listen-sidebar-text listen-ethereal" }>
-                    <img src={ Note } className="sidebar-note" alt=' '/>
+
+            <Link 
+                to='/listen/ethereal' 
+                style={{ textDecoration: 'none' }} 
+                onClick={ closeAudio }
+                className={ "listen-ethereal " + (location.pathname === '/listen/ethereal' ?
+                    "selected-sidebar-content-link" : "unselected-sidebar-content-link")
+                }
+            >
+                <img 
+                    src={ Note } 
+                    className={ location.pathname === '/listen/ethereal' ? 
+                        "content-sidebar-note-selected" : "content-sidebar-note" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                    alt='Note'
+                />
+
+                <p 
+                    className={ location.pathname === '/listen/ethereal' ? 
+                    "content-sidebar-text-selected" : "content-sidebar-text" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                >
                     ethereal/emotional
                 </p>
             </Link>
-            
-            <Link to='/listen/alternative' style={{ textDecoration: 'none' }} onClick={ closeAudio }>
-                <p className={ location.pathname === '/listen/alternative' ? "listen-sidebar-text listen-sidebar-text-selected listen-alternative" : "listen-sidebar-text listen-alternative" }>
-                    <img src={ Note } className="sidebar-note" alt=' '/>
-                    alternative/classic rock
+
+            <Link 
+                to='/listen/alternative' 
+                style={{ textDecoration: 'none' }} 
+                onClick={ closeAudio }
+                className={ "listen-alternative " + (location.pathname === '/listen/alternative' ?
+                    "selected-sidebar-content-link" : "unselected-sidebar-content-link")
+                }
+            >
+                <img 
+                    src={ Note } 
+                    className={ location.pathname === '/listen/alternative' ? 
+                        "content-sidebar-note-selected" : "content-sidebar-note" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                    alt='Note'
+                />
+
+                <p 
+                    className={ location.pathname === '/listen/alternative' ? 
+                    "content-sidebar-text-selected" : "content-sidebar-text" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                >
+                    alternative
                 </p>
             </Link>
-            
-            <Link to='/listen/vocals' style={{ textDecoration: 'none' }} onClick={ closeAudio }>
-                <p className={ location.pathname === '/listen/vocals' ? "listen-sidebar-text listen-sidebar-text-selected listen-vocals" : "listen-sidebar-text listen-vocals" }>
-                    <img src={ Note } className="sidebar-note" alt=' '/>
+
+            <Link 
+                to='/listen/vocals' 
+                style={{ textDecoration: 'none' }} 
+                onClick={ closeAudio }
+                className={ "listen-vocals " + (location.pathname === '/listen/vocals' ?
+                    "selected-sidebar-content-link" : "unselected-sidebar-content-link")
+                }
+            >
+                <img 
+                    src={ Note } 
+                    className={ location.pathname === '/listen/vocals' ? 
+                        "content-sidebar-note-selected" : "content-sidebar-note" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                    alt='Note'
+                />
+
+                <p 
+                    className={ location.pathname === '/listen/vocals' ? 
+                    "content-sidebar-text-selected" : "content-sidebar-text" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                >
                     vocals
                 </p>
             </Link>
-            
-            <Link to='/listen/good' style={{ textDecoration: 'none' }} onClick={ closeAudio }>
-                <p className={ location.pathname === '/listen/good' ? "listen-sidebar-text listen-sidebar-text-selected listen-good" : "listen-sidebar-text listen-good" }>
-                    <img src={ Note } className="sidebar-note" alt=' '/>
+
+            <Link 
+                to='/listen/good' 
+                style={{ textDecoration: 'none' }} 
+                onClick={ closeAudio }
+                className={ "listen-good " + (location.pathname === '/listen/good' ?
+                    "selected-sidebar-content-link" : "unselected-sidebar-content-link")
+                }
+            >
+                <img 
+                    src={ Note } 
+                    className={ location.pathname === '/listen/good' ? 
+                        "content-sidebar-note-selected" : "content-sidebar-note" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                    alt='Note'
+                />
+
+                <p 
+                    className={ location.pathname === '/listen/good' ? 
+                    "content-sidebar-text-selected" : "content-sidebar-text" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                >
                     good times/americana
                 </p>
             </Link>
-            
-            <Link to='/listen/quirky' style={{ textDecoration: 'none' }} onClick={ closeAudio }>
-                <p className={ location.pathname === '/listen/quirky' ? "listen-sidebar-text listen-sidebar-text-selected listen-quirky" : "listen-sidebar-text listen-quirky" }>
-                    <img src={ Note } className="sidebar-note" alt=' '/>
+
+            <Link 
+                to='/listen/quirky' 
+                style={{ textDecoration: 'none' }} 
+                onClick={ closeAudio }
+                className={ "listen-quirky " + (location.pathname === '/listen/quirky' ?
+                    "selected-sidebar-content-link" : "unselected-sidebar-content-link")
+                }
+            >
+                <img 
+                    src={ Note } 
+                    className={ location.pathname === '/listen/quirky' ? 
+                        "content-sidebar-note-selected" : "content-sidebar-note" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                    alt='Note'
+                />
+
+                <p 
+                    className={ location.pathname === '/listen/quirky' ? 
+                    "content-sidebar-text-selected" : "content-sidebar-text" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                >
                     quirky
                 </p>
             </Link>
-            
-            <Link to='/listen/world' style={{ textDecoration: 'none' }} onClick={ closeAudio }>
-                <p className={ location.pathname === '/listen/world' ? "listen-sidebar-text listen-sidebar-text-selected listen-world" : "listen-sidebar-text listen-world" }>
-                    <img src={ Note } className="sidebar-note" alt=' '/>
+
+            <Link 
+                to='/listen/world' 
+                style={{ textDecoration: 'none' }} 
+                onClick={ closeAudio }
+                className={ "listen-world " + (location.pathname === '/listen/world' ?
+                    "selected-sidebar-content-link" : "unselected-sidebar-content-link")
+                }
+            >
+                <img 
+                    src={ Note } 
+                    className={ location.pathname === '/listen/world' ? 
+                        "content-sidebar-note-selected" : "content-sidebar-note" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                    alt='Note'
+                />
+
+                <p 
+                    className={ location.pathname === '/listen/world' ? 
+                    "content-sidebar-text-selected" : "content-sidebar-text" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                >
                     world
                 </p>
             </Link>
-            
-            <Link to='/listen/childrens' style={{ textDecoration: 'none' }}>
-                <p className={ location.pathname === '/listen/childrens' ? "listen-sidebar-text listen-sidebar-text-selected listen-childrens" : "listen-sidebar-text listen-childrens" }>
-                    <img src={ Note } className="sidebar-note" alt=' '/>
+
+            <Link 
+                to='/listen/childrens' 
+                style={{ textDecoration: 'none' }} 
+                onClick={ closeAudio }
+                className={ "listen-childrens " + (location.pathname === '/listen/childrens' ?
+                    "selected-sidebar-content-link" : "unselected-sidebar-content-link")
+                }
+            >
+                <img 
+                    src={ Note } 
+                    className={ location.pathname === '/listen/childrens' ? 
+                        "content-sidebar-note-selected" : "content-sidebar-note" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                    alt='Note'
+                />
+
+                <p 
+                    className={ location.pathname === '/listen/childrens' ? 
+                    "content-sidebar-text-selected" : "content-sidebar-text" 
+                    }
+                    style={ ITEM_MARGIN_STYLE }
+                >
                     chipmunks montage
                 </p>
             </Link>
-            
         </div>
     )
 }

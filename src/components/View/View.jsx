@@ -31,10 +31,10 @@ const View = (props) => {
     props.pauseMusic();
 
     return(
-        <div className='main-content'>
+        <React.Fragment>
             <ViewSidebar closeVideoOpen={ closeVideoOpen }/>
             <ViewContent videoOpen={ videoOpen } setVideoOpen={ setVideoOpen } screencapAssets={ screencapAssets }/>
-        </div>
+        </React.Fragment>
     )
 }
 

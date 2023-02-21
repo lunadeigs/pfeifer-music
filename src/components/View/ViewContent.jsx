@@ -20,8 +20,8 @@ const ViewContent = (props) => {
     }
 
     return(
-        <div className='view-content'>
-            <h1 className='view-content-title'>{ CATEGORY_NAMES[location.pathname.split('/view/')[1]] }</h1>
+        <div className='page-content content-content'>
+            {/* <h1 className='view-content-title'>{ CATEGORY_NAMES[location.pathname.split('/view/')[1]] }</h1>
             { 
                 location.pathname.split('/view/')[1] !== undefined ? 
                     <hr className='view-content-line'/> 
@@ -37,7 +37,7 @@ const ViewContent = (props) => {
                         <CategoryReel videoOpen={ props.videoOpen } setVideoOpen={ props.setVideoOpen } category={location.pathname.split('/view/')[1]} screencapAssets={ props.screencapAssets }/>
                     :
                     null
-            }
+            } */}
         </div>
     )
 }

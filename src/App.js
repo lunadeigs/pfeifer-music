@@ -29,18 +29,23 @@ function App() {
     }
   }
 
+  /* width: 1140px; 1140px (Original: 760px)
+  height: 810px; 810px (Original: 540px) */
+
   return (
       <div className="App">
         <Navbar />
 
-        <Routes>
-          <Route path='/' element={ <PreIntroAnimation />} />
-          <Route path='/intro' element={ <IntroAnimation playMusic={ handlePlay } /> } />
-          <Route path='/home/*' element={ <Home playMusic= { handlePlay }/>} />
-          <Route path='/view/*' element={ <View pauseMusic={ handlePause } /> } />
-          <Route path='/listen/*' element={ <Listen pauseMusic={ handlePause } />} />
-        </Routes>
-
+        <div className='page-wrapper'>
+          <Routes>
+            <Route path='/' element={ <PreIntroAnimation />} />
+            <Route path='/intro' element={ <IntroAnimation playMusic={ handlePlay } /> } />
+            <Route path='/home/*' element={ <Home playMusic= { handlePlay }/>} />
+            <Route path='/view/*' element={ <View pauseMusic={ handlePause } /> } />
+            <Route path='/listen/*' element={ <Listen pauseMusic={ handlePause } />} />
+          </Routes>
+        </div>
+        
         <Footer />
       </div>
   );

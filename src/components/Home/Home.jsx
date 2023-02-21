@@ -22,10 +22,10 @@ const Home = (props) => {
     props.playMusic();
 
     return(
-        <div className='main-content'>
+        <React.Fragment>
             <ContactBlock />
             <HomeContent />
-        </div>
+        </React.Fragment>
     )
 }
 

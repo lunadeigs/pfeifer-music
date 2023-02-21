@@ -11,10 +11,10 @@ const Listen = (props) => {
     props.pauseMusic();
     
     return(
-        <div className='main-content'>
+        <React.Fragment>
             <ListenSidebar audioOpen={ audioOpen } setAudioOpen={ setAudioOpen }/>
             <ListenContent audioOpen={ audioOpen } setAudioOpen={ setAudioOpen }/>
-        </div>
+        </React.Fragment>
     )
 }
 
