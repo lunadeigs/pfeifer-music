@@ -6,6 +6,8 @@ import Player from './Player';
 import assetJson from '../../assetList.json';
 import '../../CSS/miniReel.css'
 
+//FIX Might be best to just memoize all the video componenets and then load them as they appear. Just annoying to rerender every single time.
+
 /* Category reel for video components */
 function CategoryReel(props){
     const [currentVideoPath, setCurrentVideoPath] = useState("publix_snowflake.mp4");

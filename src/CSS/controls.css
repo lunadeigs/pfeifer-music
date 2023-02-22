@@ -1,66 +1,79 @@
+/* || Containers */
 .control-row{
     position: absolute;
-    width: 100%;
-    height: 15%;
+    margin: 0;
     bottom: 0;
+    height: 8%;
+    width: 100%;
+    
     overflow: hidden;
     opacity: 75%;
-    border-radius: 0 0 15px 15px;
+    /* margin-top: -8%; */
+    /* border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%; */
+    border-radius: 0 0 calc(1vh*1.4) calc(1vh*1.4);
+    
 }
 
 .control-row-hidden{
+    height: 100%;
+    width: 95%;
     position: absolute;
     top: 100%;
+
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 calc(2vh*1.4) calc(2vh*1.4);
+
     transition: all .3s ease-out;
+    /* margin-top: 10%; */
     background: grey;
-    height: 50%;
-    width: 100%;
-    display: inline-block;
 }
 
 .control-row:hover > .control-row-hidden{
-    top: 50%;
+    top: 0;
 }
 
-/* Buttons */
-
-.control-play-pause{
-    position: absolute;
-    left: 10%;
-    top: 8%;
-    height: 85%;
+/* || Control Buttons */
+.control-row-icons {
+    height: 100%;
+    width: 15%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
 
-.control-restart{
-    position: absolute;
-    left: 2%;
-    top: 5%;
-    height: 85%;
+.control-play-pause, .control-restart{
+    margin: 0;
+    width: 35%;
 }
 
-/* End of Buttons */
+.control-restart {
+    margin-right: 10%;
+    margin-left: 2.5%;
+}
 
+/* || Progress Bar */
 .progress-bar{
-    position:absolute;
-    top: 28%;
-    left: 18%;
     border-radius: 500px !important;
-    width: 77%;
     background-color: white;
+    width: 85%;
     height: 45%;
+    justify-self: end;
     margin: 0;
 }
 
 .progress-bar-filled{
     background-color: #3a3a3a;
-    border-radius: 0;
-    position: absolute;
-    left: 0;
+    border-radius: 500px 0 0 500px;
     height: 100%;
 }
 
-/* REF CODE */
-
+/* 
 .progress-bar.bg-actual {
     background: #b445f5;
     border-radius: 0;
@@ -78,4 +91,4 @@
     display: inline-block;
     vertical-align: middle;
     content: '';
-}
+} */

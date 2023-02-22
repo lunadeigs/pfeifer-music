@@ -74,7 +74,7 @@ const GeneralReel = (props) => {
         <div className='category-reel'>
             {
                 videoOpen ?
-                    <Player 
+                    <Player
                         category={ props.category }
                         asset={ assetJson.viewAssets[props.category].find(name => name.video_path === currentVideoPath)}
                         toggleVideoOpen={ toggleVideoOpen }

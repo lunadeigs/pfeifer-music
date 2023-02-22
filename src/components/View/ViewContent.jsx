@@ -21,10 +21,10 @@ const ViewContent = (props) => {
 
     return(
         <div className='page-content content-content'>
-            {/* <h1 className='view-content-title'>{ CATEGORY_NAMES[location.pathname.split('/view/')[1]] }</h1>
+            <h1 className='content-content-title'>{ CATEGORY_NAMES[location.pathname.split('/view/')[1]] }</h1>
             { 
                 location.pathname.split('/view/')[1] !== undefined ? 
-                    <hr className='view-content-line'/> 
+                    <hr className='content-content-line'/> 
                     : 
                     null 
             }
@@ -32,12 +32,22 @@ const ViewContent = (props) => {
             {
                 location.pathname.split('/view/')[1] !== undefined ?
                     location.pathname.split('/view/')[1] === 'general' ?
-                        <GeneralReel videoOpen={ props.videoOpen } setVideoOpen={ props.setVideoOpen } category={location.pathname.split('/view/')[1]} screencapAssets={ props.screencapAssets }/>
+                        <GeneralReel 
+                            videoOpen={ props.videoOpen } 
+                            setVideoOpen={ props.setVideoOpen } 
+                            category={ location.pathname.split('/view/')[1] } 
+                            screencapAssets={ props.screencapAssets }
+                        />
                         :
-                        <CategoryReel videoOpen={ props.videoOpen } setVideoOpen={ props.setVideoOpen } category={location.pathname.split('/view/')[1]} screencapAssets={ props.screencapAssets }/>
+                        <CategoryReel 
+                            videoOpen={ props.videoOpen } 
+                            setVideoOpen={ props.setVideoOpen } 
+                            category={ location.pathname.split('/view/')[1] } 
+                            screencapAssets={ props.screencapAssets }
+                        />
                     :
                     null
-            } */}
+            }
         </div>
     )
 }

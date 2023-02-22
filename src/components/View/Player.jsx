@@ -58,6 +58,8 @@ function usePlayerController(videoRef){
     });
 
     return([restartVideo, toggleVideoPlaying, videoPaused])
+
+   
 }
 
 /** Progress bar for video player */
@@ -89,30 +91,15 @@ function Player(props){
     }
 
     return(
-        <div className='player' id={ props.category === "general" && props.currentAssetIndex !== 0 ? "extra-player-margin" : null}>
-            <p className="back-button" onClick={ props.toggleVideoOpen } >
-                back
-                <img src={ Note } alt="" className="back-button-note" />
-            </p>
-            {
-                props.category === 'general' && assetList.viewAssets.general.indexOf(assetList.viewAssets.general.find(value => value.name === currentVidName)) !== 8 ?
-                    <p className="next-button" onClick={() => {
-                        let currentIndex = assetList.viewAssets.general.indexOf(assetList.viewAssets.general.find(value => value.name === currentVidName));
-                        const newItem = assetList.viewAssets.general[currentIndex+1];
-                        setCurrentVidPath(process.env.PUBLIC_URL + "/static/video_assets/" + props.category + "/" + newItem.video_path);
-                        setCurrentVidName(newItem.name);
-                        videoRef.current.pause();
-                        videoRef.current.currentTime = 0;
-                        videoRef.current.play();
-                    }}>
-                        next
-                        <img src={ Note } alt="" className="back-button-note" />
-                    </p>
-                    :
-                    null
-            }
+        <div 
+            className='player'
+        >
+            <div className="back-button" onClick={ props.toggleVideoOpen } >
+                <img src={ Note } alt="" className="button-note" />
+                <span className="button-text">back</span>
+            </div>
 
-            <div className="vid-container">
+            <div className="vid-container" >
                 <video 
                     onLoadStart={ () => {
                         console.log(videoRef.current);
@@ -124,8 +111,6 @@ function Player(props){
                     autoPlay 
                     src={ currentVidPath }
                     className="video-player" 
-                    width="350" 
-                    height="262" 
                     onEnded = { () => {
                         if(props.category === 'general' && assetList.viewAssets.general.indexOf(assetList.viewAssets.general.find(value => value.name === currentVidName)) !== 8){
                             let currentIndex = assetList.viewAssets.general.indexOf(assetList.viewAssets.general.find(value => value.name === currentVidName));
@@ -139,9 +124,8 @@ function Player(props){
                             props.toggleVideoOpen()
                         }
                     }}
-                    style={ VIDEO_STYLE }
                     onClick={ toggleVideoPlaying }
-                    
+                    key={ currentVidPath }
                 />
 
                 <PlayerControls
@@ -161,6 +145,24 @@ function Player(props){
                 <p className="player-text">"{ currentVidName.split("\"")[1] }"</p>
                 <p className="player-text">{ currentVidName.split("\"")[2] }</p>
             </div>
+
+            {
+                props.category === 'general' && assetList.viewAssets.general.indexOf(assetList.viewAssets.general.find(value => value.name === currentVidName)) !== 8 ?
+                    <div className="next-button" onClick={ () => {
+                        let currentIndex = assetList.viewAssets.general.indexOf(assetList.viewAssets.general.find(value => value.name === currentVidName));
+                        const newItem = assetList.viewAssets.general[currentIndex+1];
+
+                        setCurrentVidPath(process.env.PUBLIC_URL + "/static/video_assets/" + props.category + "/" + newItem.video_path);
+
+                        setCurrentVidName(newItem.name);
+                        restartVideo();
+                    }}>
+                        <img src={ Note } alt="" className="button-note" />
+                        <span className="button-text">next</span>
+                    </div>
+                    :
+                    null
+            } 
         </div>
     );
 }

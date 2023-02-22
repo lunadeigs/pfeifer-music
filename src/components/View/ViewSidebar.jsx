@@ -22,7 +22,7 @@ const ViewSidebar = (props) => {
                 <img 
                     src={ Note } 
                     style={{
-                        marginBottom: "2%"
+                        marginBottom: "1.5%"
                     }}
                     className={ location.pathname === '/view/general' ? 
                         "content-sidebar-note-selected" : "content-sidebar-note" 
@@ -31,10 +31,10 @@ const ViewSidebar = (props) => {
                 />
                 <p 
                     style={{
-                        marginBottom: "2%"
+                        marginBottom: "1.5%"
                     }}
                     className={ location.pathname === '/view/general' ? 
-                    "content-sidebar-text-selected" : "content-sidebar-text" 
+                    "content-sidebar-title-selected" : "content-sidebar-title" 
                     }
                 >
                     general reel
