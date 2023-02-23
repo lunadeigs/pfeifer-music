@@ -10,7 +10,7 @@ const ListenSidebar = (props) => {
     const location = useLocation();
 
     const ITEM_MARGIN_STYLE = {
-        marginBottom: "-1.5%"
+        marginBottom: "-2.75%"
     }
 
     function closeAudio(){

@@ -91,9 +91,7 @@ function Player(props){
     }
 
     return(
-        <div 
-            className='player'
-        >
+        <div className='player'>
             <div className="back-button" onClick={ props.toggleVideoOpen } >
                 <img src={ Note } alt="" className="button-note" />
                 <span className="button-text">back</span>

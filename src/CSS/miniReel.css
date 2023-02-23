@@ -82,7 +82,7 @@
 /* Mini Audio Classes */
 .mini-audio {
   font-weight: bold;
-  line-height: 23px;
+  line-height: 2em;
   opacity: 0;
   animation-fill-mode: forwards;
 }

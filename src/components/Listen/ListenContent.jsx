@@ -43,14 +43,35 @@ const ListenContent = (props) => {
     }, [location.pathname])
 
     return(
-        <div className='page-content content-content'></div>
+        <div className='page-content content-content'>
+            <h1 className='content-content-title'>{ CATEGORY_NAMES[location.pathname.split('/listen/')[1]] }</h1>
+            { location.pathname.split('/listen/')[1] !== undefined ? 
+                <hr className='content-content-line'/> 
+                : 
+                null 
+            }
+
+            { location.pathname.split('/listen/')[1] === undefined ? 
+                null
+                : 
+                location.pathname.split('/listen/')[1] === 'montage' ?
+                    <Montage audioOpen={ props.audioOpen } setAudioOpen={ props.setAudioOpen } currentAudioName={ currentAudioName } setCurrentAudioName={ setCurrentAudioName } toggleAudioOpen={ toggleAudioOpen } />
+                    :
+                    <CategoryReel key={ childKey } currentAudioName={ currentAudioName } setCurrentAudioName={ setCurrentAudioName } toggleAudioOpen={ toggleAudioOpen } audioOpen={ props.audioOpen } setAudioOpen={ props.setAudioOpen } category={ location.pathname.split('/listen/')[1] }/>
+            }
+        </div>
+        //     { 
+        //         location.pathname.split('/listen/')[1] !== undefined ? 
+        //             <hr className='view-content-line'/> 
+        //             : 
+        //             null 
+        //     }
         // <div className='view-content'>
         //     <h1 className='view-content-title'>{ CATEGORY_NAMES[location.pathname.split('/listen/')[1]] }</h1>
         //     { 
         //         location.pathname.split('/listen/')[1] !== undefined ? 
         //             <hr className='view-content-line'/> 
         //             : 
-        //             null 
         //     }
 
         //     { 
