@@ -24,23 +24,23 @@ const AudioPlayer = (props) => {
         grd.addColorStop(0.6, '#00CB00');
     */
 
-    useEffect(() => {
-        audioElement.id = 'audio-player-sound'
-        audioElement.addEventListener('canplaythrough', () => {
-            audioElement.play();
-        })
+    // useEffect(() => {
+    //     audioElement.id = 'audio-player-sound'
+    //     audioElement.addEventListener('canplaythrough', () => {
+    //         audioElement.play();
+    //     })
 
-        return(() => {
-            console.log("un render")
-            audioElement.removeEventListener('canplaythrough', () => {
-                audioElement.play();
-            })
+    //     return(() => {
+    //         console.log("un render")
+    //         audioElement.removeEventListener('canplaythrough', () => {
+    //             audioElement.play();
+    //         })
 
-            if(!audioElement.paused){
-                audioElement.pause();
-            }
-        })
-    }, [audioElement])
+    //         if(!audioElement.paused){
+    //             audioElement.pause();
+    //         }
+    //     })
+    // }, [audioElement])
     const [playing, setPlaying] = useState(true);
 
     function handlePlayPause(){
