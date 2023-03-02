@@ -4,6 +4,7 @@ import AudioSpectrum from 'react-audio-spectrum';
 
 /* Internal dependencies */
 import assetList from '../../assetList.json'
+import AudioPlayer from './AudioPlayer';
 
 /** Handles the montage subpage of the listen page */
 function Montage(props){
@@ -26,9 +27,35 @@ function Montage(props){
         width: "40px"
     }
 
+    /*
+
+<audio 
+                    id="audio-player-sound" 
+                    ref={ audioRef }
+                    src={ 
+                        process.env.PUBLIC_URL + "/static/sound_assets/montage/" + assetList.listenAssets['montage'].file_location 
+                    }
+                    autoPlay={ true }
+                />
+    */
+
     return(
         <div className="category-reel">
-            <div className="player">
+            <AudioPlayer 
+                category='montage'
+                toggleAudioOpen={ props.toggleAudioOpen } 
+                audioName='montage'
+            />
+        </div>
+    )
+}
+
+export default Montage;
+
+
+/*
+<div className="player">
+                
                 <p className='audio-title'>{ props.audioName }</p>
 
                 <AudioSpectrum
@@ -77,11 +104,8 @@ function Montage(props){
 
                 </div>
 
-                {/* <img onClick={ handlePlayPause } src={ playing ? Pause : Play } className="play_pause" alt={playing ? "pause" : "play"} /> */}
+                {/* <img onClick={ handlePlayPause } src={ playing ? Pause : Play } className="play_pause" alt={playing ? "pause" : "play"} /> }
 
-            </div>
-        </div>
-    )
-}
+                </div>
 
-export default Montage;
+*/

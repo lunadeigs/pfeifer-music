@@ -306,9 +306,10 @@
         ]
     },
     "listenAssets":{
-        "montage": {
+        "montage": [{
+            "name": "montage",
             "file_location": "montage.mp3"
-        },
+        }],
         "grooves": [
             {
                 "name": "air touch \"supercharged\"",

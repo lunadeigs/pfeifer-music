@@ -193,7 +193,7 @@ const ListenSidebar = (props) => {
                     }
                     style={ ITEM_MARGIN_STYLE }
                 >
-                    alternative
+                    alternative/classic rock
                 </p>
             </Link>
 

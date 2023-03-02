@@ -11,36 +11,51 @@ const AudioPlayer = (props) => {
     const audioCategory = props.category
     const audioName = props.audioName
     
-
     const audioElement = useMemo(() => new Audio(
         process.env.PUBLIC_URL + "/static/sound_assets/" + audioCategory + '/' + assetList.listenAssets[audioCategory].find(value => value.name === audioName).file_location
     ), [audioCategory, audioName]);
 
-    /*
-        grd.addColorStop(0.05, '#FF0000');
-        grd.addColorStop(0.15, '#FFA500');
-        grd.addColorStop(0.25, '#FFFF00');
-        grd.addColorStop(0.3, '#FFFF00');
-        grd.addColorStop(0.6, '#00CB00');
-    */
+    useEffect(() => { 
+        function handleSpacePress(e){
+            if(e.keyCode === 32){
+                e.preventDefault();
+    
+                handlePlayPause();
+            }
+        }
 
-    // useEffect(() => {
-    //     audioElement.id = 'audio-player-sound'
-    //     audioElement.addEventListener('canplaythrough', () => {
-    //         audioElement.play();
-    //     })
+        window.addEventListener("keydown", handleSpacePress);
+        
+        return(() => {
+            window.removeEventListener('keydown', handleSpacePress);
+        })
+    });
 
-    //     return(() => {
-    //         console.log("un render")
-    //         audioElement.removeEventListener('canplaythrough', () => {
-    //             audioElement.play();
-    //         })
+    useEffect(() => {
+        audioElement.id = 'audio-player-sound'
+        audioElement.addEventListener('canplaythrough', () => {
+            audioElement.play();
+        })
+        audioElement.addEventListener("ended", () => {
+            props.toggleAudioOpen();
+        });
 
-    //         if(!audioElement.paused){
-    //             audioElement.pause();
-    //         }
-    //     })
-    // }, [audioElement])
+        return(() => {
+            console.log("un render")
+            audioElement.removeEventListener('canplaythrough', () => {
+                audioElement.play();
+            })
+
+            audioElement.removeEventListener("ended", () => {
+                props.toggleAudioOpen();
+            });
+
+            if(!audioElement.paused){
+                audioElement.pause();
+            }
+        })
+    }, [audioElement])
+
     const [playing, setPlaying] = useState(true);
 
     function handlePlayPause(){
@@ -70,7 +85,7 @@ const AudioPlayer = (props) => {
     
     return(
         <div className="player">
-            <div className="audio-title-row">
+            { props.audioName !== 'montage' && <div className="audio-title-row">
                 <h3 className='audio-title'>{ props.audioName }</h3>
                 <div className="back-button audio-back-button" onClick={ () => {
                     closePause()
@@ -79,7 +94,7 @@ const AudioPlayer = (props) => {
                     <img src={ Note } alt="" className="button-note" />
                     <span className="button-text">back</span>
                 </div>
-            </div>
+            </div> }
 
             <VUMeter 
                 audioElement={ audioElement }
