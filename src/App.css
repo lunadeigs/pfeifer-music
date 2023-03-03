@@ -174,7 +174,7 @@ body {
 }
 
 .footer-logo{
-  width: 25%;
+  width: 23%;
   float: right;
   margin-top: -3.5%;
   margin-bottom: 0;
@@ -686,64 +686,62 @@ body {
   justify-content: center;
 }
 
-/* || Intro Animation */
+/* || Pre Intro Animation */
+
+.pre-intro-container{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .pre-intro-content{
-  padding-left: 275px;
-  padding-top: 150px;
-  height: 189px;
+  padding: 0;
+  margin: 0;
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 45%;
+
 }
 
 .pre-intro-text{
-  text-align: center;
-  display: flex;
-  align-items: center;
-  font-size: 75px;
-  font-weight: bold;
+  font-size: calc(8.5vh * 1.4);
+  letter-spacing: calc(0.5vh * 1.4);
 }
 
 .pre-intro-note{
-  margin-left: -50px;
-  margin-top: -25px;
-  height: 150px;
-  filter: brightness(0%);
+  height: 65%;
 }
 
-.pre-intro-text:hover{
-  color: white;
-  cursor: pointer;
-}
-
-.pre-intro-text:hover .pre-intro-note{
-  filter: brightness(100%);
-  cursor: pointer
-}
-
-.pre-intro-note:hover{
-  filter: brightness(100%);
-  cursor: pointer;
-}
-
-.pre-intro-note:active{
-  transform: rotate(20deg);
-}
-
-.pre-intro-text:active .pre-intro-note{
-  transform: rotate(20deg);
-}
-
-.pre-intro-anim{
-  text-align: center;
-  display: flex;
-  align-items: center;
-  font-size: 75px;
-  font-weight: bold;
+.start-intro-animation{
   animation-fill-mode: forwards;
-  animation-name: squash;
+  animation-name: fade-out-left;
   animation-duration: 3s;
   filter: brightness(0%);
 }
 
-@keyframes squash{
+.start-intro-animation:hover .button-text {
+  color: black;
+
+}
+
+.start-intro-animation:hover .button-note{
+  filter: brightness(0%);
+  cursor: default;
+}
+
+.start-intro-animation:active .button-note {
+  transform: rotate(0);
+}
+
+.start-intro-animation:hover{
+  color: black;
+  cursor: default;
+}
+
+@keyframes fade-out-left{
   33%{
     opacity: 0;
   }
@@ -755,13 +753,65 @@ body {
 }
 
 
-/* Intro Animation */
+/* Intro Animation Classes */
 .intro-animation{
-  width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100%;
 }
+
+.intro-sidebar{
+  width: 0%;
+  padding: 0;
+
+  -webkit-animation-duraction:5s;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+  animation-name: intro-sidebar-expand;
+  animation-timing-function: linear;
+  animation-delay: 0.5s;
+  transform: scaleY(0.5%);
+}
+
+@keyframes intro-sidebar-expand {
+  0%{
+    width: 0%;
+    padding: 0;
+    transform: scaleY(0.5%);
+  }
+
+  50%{
+    width: 35%;
+    padding-top: 25%;
+    padding-right: 1%;
+    padding-bottom: 0;
+    padding-left: 2%;
+    transform: scaleY(0.5%);
+  }
+
+  100%{
+    width: 35%;
+    padding-top: 25%;
+    padding-right: 1%;
+    padding-bottom: 0;
+    padding-left: 2%;
+    transform: scaleY(100%);
+  }
+}
+
+.intro-contact{
+  opacity: 0;
+
+  animation-fill-mode: forwards;
+  animation-duration: 0.4s;
+  animation-timing-function: linear;
+  animation-delay: 4.85s;
+  animation-name: fade-in;
+}
+
+
+/* END */
 
 .expanding-sidebar{
   width: 240px;
@@ -778,14 +828,6 @@ body {
   animation-delay: 0.5s;
   width: 0%;
   transform: scaleY(0.5%);
-}
-
-.intro-main-content{
-  width: 760px;
-  height: 414px;
-  margin: 0;
-  padding: 0;
-  display: inline-flex;
 }
 
 .intro-title-area{

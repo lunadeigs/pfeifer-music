@@ -36,15 +36,14 @@ function App() {
       <div className="App">
         <Navbar />
 
-        <div className='page-wrapper'>
-          <Routes>
-            <Route path='/' element={ <PreIntroAnimation />} />
-            <Route path='/intro' element={ <IntroAnimation playMusic={ handlePlay } /> } />
-            <Route path='/home/*' element={ <Home playMusic= { handlePlay }/>} />
-            <Route path='/view/*' element={ <View pauseMusic={ handlePause } /> } />
-            <Route path='/listen/*' element={ <Listen pauseMusic={ handlePause } />} />
-          </Routes>
-        </div>
+        
+        <Routes>
+          <Route path='/' element={ <div className='page-wrapper'><PreIntroAnimation /></div>} />
+          <Route path='/intro' element={ <IntroAnimation playMusic={ handlePlay } /> } />
+          <Route path='/home/*' element={ <div className='page-wrapper'><Home playMusic= { handlePlay }/></div> } />
+          <Route path='/view/*' element={ <div className='page-wrapper'><View pauseMusic={ handlePause } /></div> } />
+          <Route path='/listen/*' element={ <div className='page-wrapper'><Listen pauseMusic={ handlePause } /></div> } />
+        </Routes>
         
         <Footer />
       </div>

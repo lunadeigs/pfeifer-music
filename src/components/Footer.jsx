@@ -2,9 +2,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
-/* Internal Dependencies */
-import Note from '../Image_Assets/Pfeifer_Note.png';
-
 /** Footer component used by all pages */
 const Footer = () => {
     const location = useLocation();

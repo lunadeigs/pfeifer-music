@@ -9,16 +9,17 @@ import Note from '../Image_Assets/Pfeifer_Note.png';
 const IntroAnimation = (props) => {
     const navigate = useNavigate();
 
-    useEffect(() => {
-        props.playMusic();
-        setTimeout(() => {
-            navigate('/home');
-        }, 6000)
-    })
+    // useEffect(() => {
+    //     props.playMusic();
+    //     setTimeout(() => {
+    //         navigate('/home');
+    //     }, 6000)
+    // })
+    
 
     return (
         <div className="intro-animation">
-            <div className='navbar'>
+            {/* <div className='navbar'>
                 <h2 className="navbar-item navbar-item-selected intro-navbar-item intro-navbar-home">
                     <img src={ Note } className="navbar-note navbar-note-selected" alt=" "/>
                     home
@@ -33,26 +34,42 @@ const IntroAnimation = (props) => {
                     <img src={ Note } className="navbar-note" alt=" "/>
                     listen
                 </h2>
+            </div> */}
+            <div className='navbar unselectable'>
+                <span style={{ textDecoration: 'none' }} className="navbar-item navbar-item-selected">
+                    <img src={ Note } className="navbar-note navbar-note-selected" alt=" "/>
+                    <span className="navbar-text navbar-text-selected">home</span>
+                </span>
+                
+                <span style={{ textDecoration: 'none' }} className="navbar-item">
+                    <img src={ Note } className="navbar-note" alt=" "/>
+                    <span className="navbar-text">view</span>
+                </span>
+                
+                <span style={{ textDecoration: 'none' }} className="navbar-item">
+                    <img src={ Note } className="navbar-note" alt=" "/>
+                    <span className="navbar-text">listen</span>
+                </span>
             </div>
-            <div className='intro-main-content'>
-                <div className='expanding-sidebar'>
-                    <div className='contact-block intro-contact-block'>
-                        <div className='contact-info'>
-                            <p className='contact-red'>contact:</p>
-                            <p>howard pfeifer</p>
-                            <p>312.467.7027</p>
-                            <p className='contact-blue'>howard@pfeifermusic.com</p>
-                        </div>
 
-                        <br />
-
-                        <div className='contact-info'>
-                            <p>5974 n leader av</p>
-                            <p>chicago, il 60646</p>
-                        </div>
-                    </div>   
+            <div className='page-wrapper'>
+                <div className="intro-sidebar page-sidebar home-page-sidebar unselectable">
+                    <div className="intro-contact contact-info">
+                        <p className="red-text">contact:</p>
+                        <p>howard pfeifer</p>
+                        <p>312.467.7027</p>
+                        <p className="blue-text">howard@pfeifermusic.com</p>
+                    </div>
+                    <br />
+                    <div className="intro-contact contact-info unselectable">
+                        <p>5974 n leader av</p>
+                        <p>chicago, il 60646</p>
+                    </div>
                 </div>
-                <div className='intro-title-area'>
+                <div className="page-content home-page-content">
+                    <img src="/pfeifer-music/static/Pfeifer_Music_Logo.png" alt="Pfeifer Music Logo" className="home-logo" />
+                </div>
+                {/* <div className='intro-title-area'>
                     <hr className='top-intro-line intro-line' />
                     <div className='intro-title'>
                         <img className='title-note intro-title-note' src={ Note } alt=" "/>
@@ -71,8 +88,8 @@ const IntroAnimation = (props) => {
                     </div>
                     
 
-                    {/* <hr className='bottom-intro-line intro-line' /> */}
-                </div>
+                    <hr className='bottom-intro-line intro-line' />
+                </div> */}
             </div>
         </div>
     )

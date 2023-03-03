@@ -9,23 +9,28 @@ import Note from '../Image_Assets/Pfeifer_Note.png'
 const PreIntroAnimation = () => {
     const navigate = useNavigate();
 
-    const [currentClass, setCurrentClass] = useState('pre-intro-text');
+    const [enterClicked, setEnterClicked] = useState(false);
 
     const startIntro = () => {
-        setCurrentClass('pre-intro-anim');
-        setTimeout(() => {
-            navigate("/intro");
-        }, [1000])
+        if(!enterClicked){
+            setEnterClicked(value => !value);
+
+            setTimeout(() => {
+                navigate("/intro");
+            }, [1000])
+        }
     }
 
     return(
-        <div className='pre-intro-content'>
-            <h2 className={ currentClass } onClick={ startIntro }>
-                Enter
-                <img className='pre-intro-note' src={ Note } alt=" "/>
-            </h2>
-            
+        <div className='pre-intro-container'>
+            <div className='pre-intro-content'>
+                <div className={`back-button audio-back-button ${enterClicked ? 'start-intro-animation' : ''}`}onClick={startIntro}>
+                    <img src={ Note } alt="" className="button-note pre-intro-note" />
+                    <span className="button-text pre-intro-text">Enter</span>
+                </div>
+            </div>
         </div>
+        
     )
 }
 
