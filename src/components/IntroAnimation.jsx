@@ -15,44 +15,27 @@ import Note from '../Image_Assets/Pfeifer_Note.png';
 const IntroAnimation = (props) => {
     const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     props.playMusic();
-    //     setTimeout(() => {
-    //         navigate('/home');
-    //     }, 6000)
-    // })
+    useEffect(() => {
+        props.playMusic();
+        setTimeout(() => {
+            navigate('/home');
+        }, 6000)
+    })
     
-
     return (
         <div className="intro-animation">
-            {/* <div className='navbar'>
-                <h2 className="navbar-item navbar-item-selected intro-navbar-item intro-navbar-home">
-                    <img src={ Note } className="navbar-note navbar-note-selected" alt=" "/>
-                    home
-                </h2>
-
-                <h2 className="navbar-item intro-navbar-item intro-navbar-view">
-                    <img src={ Note } className="navbar-note" alt=" "/>
-                    view
-                </h2>
-
-                <h2 className="navbar-item intro-navbar-item intro-navbar-listen">
-                    <img src={ Note } className="navbar-note" alt=" "/>
-                    listen
-                </h2>
-            </div> */}
             <div className='navbar unselectable'>
-                <span style={{ textDecoration: 'none' }} className="navbar-item navbar-item-selected">
+                <span style={{ textDecoration: 'none' }} className="navbar-item navbar-item-selected intro-home">
                     <img src={ Note } className="navbar-note navbar-note-selected" alt=" "/>
                     <span className="navbar-text navbar-text-selected">home</span>
                 </span>
                 
-                <span style={{ textDecoration: 'none' }} className="navbar-item">
+                <span style={{ textDecoration: 'none' }} className="navbar-item intro-view">
                     <img src={ Note } className="navbar-note" alt=" "/>
                     <span className="navbar-text">view</span>
                 </span>
                 
-                <span style={{ textDecoration: 'none' }} className="navbar-item">
+                <span style={{ textDecoration: 'none' }} className="navbar-item intro-listen">
                     <img src={ Note } className="navbar-note" alt=" "/>
                     <span className="navbar-text">listen</span>
                 </span>
@@ -80,27 +63,27 @@ const IntroAnimation = (props) => {
                             src={process.env.PUBLIC_URL + '/static/Pfeifer_Music_Logo.png'}
                             alt={"Pfeifer Music Logo"}
                         />
-                        <img 
+                        <img
                             className="intro-letter intro-letter-f1" 
                             src={process.env.PUBLIC_URL + '/static/Pfeifer_Music_Logo.png'}
                             alt={"Pfeifer Music Logo"}
                         />
-                        <img 
+                        <img
                             className="intro-letter intro-letter-e1" 
                             src={process.env.PUBLIC_URL + '/static/Pfeifer_Music_Logo.png'}
                             alt={"Pfeifer Music Logo"}
                         />
-                        <img 
+                        <img
                             className="intro-letter intro-letter-i" 
                             src={process.env.PUBLIC_URL + '/static/Pfeifer_Music_Logo.png'}
                             alt={"Pfeifer Music Logo"}
                         />
                         <img 
                             className="intro-letter intro-letter-note" 
-                            src={process.env.PUBLIC_URL + '/static/PF_Logo_Missing_F.png'}
+                            src={process.env.PUBLIC_URL + '/static/Pfeifer_Music_Logo_Only_Note.png'}
                             alt={"Pfeifer Music Logo"}
                         />
-                        <img 
+                        <img
                             className="intro-letter intro-letter-f2" 
                             src={process.env.PUBLIC_URL + '/static/Pfeifer_Music_Logo.png'}
                             alt={"Pfeifer Music Logo"}
@@ -115,32 +98,13 @@ const IntroAnimation = (props) => {
                             src={process.env.PUBLIC_URL + '/static/Pfeifer_Music_Logo.png'}
                             alt={"Pfeifer Music Logo"}
                         />
-
+                        <img 
+                            className="intro-letter intro-music-partners" 
+                            src={process.env.PUBLIC_URL + '/static/Pfeifer_Music_Logo.png'}
+                            alt={"Pfeifer Music Logo"}
+                        />
                     </div>
-                        
-                    {/* <img src="/pfeifer-music/static/Pfeifer_Music_Logo.png" alt="Pfeifer Music Logo" className="home-logo" /> */}
                 </div>
-                {/* <div className='intro-title-area'>
-                    <hr className='top-intro-line intro-line' />
-                    <div className='intro-title'>
-                        <img className='title-note intro-title-note' src={ Note } alt=" "/>
-                        
-                        <h1 className='title' >
-                            <span className='intro-letter intro-p'>p</span>
-                            <span className='intro-letter intro-f-1'>f</span>
-                            <span className='intro-letter intro-e-1'>e</span>
-                            <span className='intro-letter intro-i'>i</span>
-                            <span className='intro-letter intro-f-2'>f</span>
-                            <span className='intro-letter intro-e-2'>e</span>
-                            <span className='intro-letter intro-r'>r</span>
-                            </h1>
-
-                        <p className='music-partners music-partners-intro'>music partners</p>
-                    </div>
-                    
-
-                    <hr className='bottom-intro-line intro-line' />
-                </div> */}
             </div>
         </div>
     )

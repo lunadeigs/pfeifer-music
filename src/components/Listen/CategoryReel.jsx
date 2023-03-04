@@ -68,7 +68,7 @@ const CategoryReel = (props) => {
     }, [currentCategory, buildListenTitle, dynamicStyle]);
 
     return(
-        <div className='category-reel'>
+        <div className='category-reel unselectable'>
             {
                 props.audioOpen ?
                     <AudioPlayer category={ props.category } toggleAudioOpen={ props.toggleAudioOpen } audioName={ props.currentAudioName }/>

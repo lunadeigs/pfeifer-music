@@ -33,7 +33,7 @@ function App() {
   height: 810px; 810px (Original: 540px) */
 
   return (
-      <div className="App">
+      <div className="App unselectable">
         <Navbar />
 
         
