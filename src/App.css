@@ -903,7 +903,12 @@ body {
 }
 
 .intro-letter-note{
-  clip-path: polygon(45% 0%, 70% 0%, 70% 45%, 45% 45%);
+  clip-path: circle(0% at 51% 37%);
+  transition: 0.4s;
+}
+
+.intro-logo-container:hover .intro-letter-note{
+  clip-path: circle(30% at 51% 37%);
 }
 
 .intro-p{
