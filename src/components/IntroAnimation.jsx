@@ -5,6 +5,12 @@ import { useNavigate } from 'react-router-dom';
 /* Internal dependencies */
 import Note from '../Image_Assets/Pfeifer_Note.png';
 
+
+/* Intro Title Classes */
+// const LETTER_R = {
+//     backgroundImage: "url(process.env.PUBLIC_URL + '/static/Pfeifer_Music_Logo.png')"
+// }
+
 /** Component to facilitate introduction to site */
 const IntroAnimation = (props) => {
     const navigate = useNavigate();
@@ -52,8 +58,9 @@ const IntroAnimation = (props) => {
                 </span>
             </div>
 
-            <div className='page-wrapper'>
-                <div className="intro-sidebar page-sidebar home-page-sidebar unselectable">
+            <div className='page-wrapper intro-page-wrapper'>
+                <span className='navbar-line' />
+                <div className="intro-sidebar page-sidebar unselectable">
                     <div className="intro-contact contact-info">
                         <p className="red-text">contact:</p>
                         <p>howard pfeifer</p>
@@ -67,7 +74,51 @@ const IntroAnimation = (props) => {
                     </div>
                 </div>
                 <div className="page-content home-page-content">
-                    <img src="/pfeifer-music/static/Pfeifer_Music_Logo.png" alt="Pfeifer Music Logo" className="home-logo" />
+                    <div className="intro-logo-container">
+                        <img 
+                            className="intro-letter intro-letter-p" 
+                            src={process.env.PUBLIC_URL + '/static/Pfeifer_Music_Logo.png'}
+                            alt={"Pfeifer Music Logo"}
+                        />
+                        <img 
+                            className="intro-letter intro-letter-f1" 
+                            src={process.env.PUBLIC_URL + '/static/Pfeifer_Music_Logo.png'}
+                            alt={"Pfeifer Music Logo"}
+                        />
+                        <img 
+                            className="intro-letter intro-letter-e1" 
+                            src={process.env.PUBLIC_URL + '/static/Pfeifer_Music_Logo.png'}
+                            alt={"Pfeifer Music Logo"}
+                        />
+                        <img 
+                            className="intro-letter intro-letter-i" 
+                            src={process.env.PUBLIC_URL + '/static/Pfeifer_Music_Logo.png'}
+                            alt={"Pfeifer Music Logo"}
+                        />
+                        <img 
+                            className="intro-letter intro-letter-note" 
+                            src={process.env.PUBLIC_URL + '/static/PF_Logo_Missing_F.png'}
+                            alt={"Pfeifer Music Logo"}
+                        />
+                        <img 
+                            className="intro-letter intro-letter-f2" 
+                            src={process.env.PUBLIC_URL + '/static/Pfeifer_Music_Logo.png'}
+                            alt={"Pfeifer Music Logo"}
+                        />
+                        <img 
+                            className="intro-letter intro-letter-e2" 
+                            src={process.env.PUBLIC_URL + '/static/Pfeifer_Music_Logo.png'}
+                            alt={"Pfeifer Music Logo"}
+                        />
+                        <img 
+                            className="intro-letter intro-letter-r" 
+                            src={process.env.PUBLIC_URL + '/static/Pfeifer_Music_Logo.png'}
+                            alt={"Pfeifer Music Logo"}
+                        />
+
+                    </div>
+                        
+                    {/* <img src="/pfeifer-music/static/Pfeifer_Music_Logo.png" alt="Pfeifer Music Logo" className="home-logo" /> */}
                 </div>
                 {/* <div className='intro-title-area'>
                     <hr className='top-intro-line intro-line' />
