@@ -45,7 +45,7 @@
   text-align: center;
 
 
-  font-size: calc(1.5vh * 1.4);
+  font-size: calc(calc(1.5 * var(--scaling-height)) * 1.4);
   
   text-shadow: 0.15em 0.15em 0.5em black;
 }

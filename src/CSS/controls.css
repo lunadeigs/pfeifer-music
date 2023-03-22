@@ -12,7 +12,7 @@
     /* margin-top: -8%; */
     /* border-bottom-left-radius: 5%;
     border-bottom-right-radius: 5%; */
-    border-radius: 0 0 calc(1vh*1.4) calc(1vh*1.4);
+    border-radius: 0 0 calc(var(--scaling-height)*1.4) calc(var(--scaling-height)*1.4);
 }
 
 .control-row-hidden{
@@ -27,7 +27,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 0 0 calc(2vh*1.4) calc(2vh*1.4);
+    border-radius: 0 0 calc(calc(2 * var(--scaling-height))*1.4) calc(calc(2 * var(--scaling-height))*1.4);
 
     transition: all .3s ease-out;
     /* margin-top: 10%; */
