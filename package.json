@@ -1,7 +1,7 @@
 {
-  "name": "pmsite",
+  "name": "pfeifermusic",
   "version": "0.1.0",
-  "homepage": "https://lunadeigs.github.io/pfeifer-music",
+  
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -10,13 +10,14 @@
     "react": "^18.2.0",
     "react-audio-spectrum": "^0.1.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
     "react-player": "^2.10.1",
     "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^4.0.0",
+    "serve": "^14.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

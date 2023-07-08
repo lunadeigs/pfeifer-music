@@ -11,7 +11,6 @@ const Home = (props) => {
         let ignore = false;
 
         if(!ignore){
-            console.log("Playing Home Music");
             props.playMusic();
         }
 

@@ -81,14 +81,11 @@ export default function VUMeter(props){
             }else{
                 CurrentAudioLevels.current = audioLevels
             }
-
-            console.log(maxLevel)
             
 
             canvasContext.clearRect(0, 0, audioSpectrumProperties.width, audioSpectrumProperties.height)
             
             //const gradient = canvasContext.createLinearGradient(0, 0, 0, audioSpectrumProperties.height)
-             
             let heightStepSize = audioSpectrumProperties.height * 0.04;
             let heightGapSize = audioSpectrumProperties.height * 0.01;
 

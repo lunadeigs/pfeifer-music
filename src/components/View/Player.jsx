@@ -25,8 +25,6 @@ function usePlayerController(videoRef){
     
     function toggleVideoPlaying(){
         if(!videoRef.current) return;
-        console.log(videoRef.current.paused)
-
         if(videoRef.current.paused){
             videoRef.current.play();
             if(videoPaused) toggleVideoPaused();
@@ -41,14 +39,10 @@ function usePlayerController(videoRef){
         function handleSpacePress(e){
             if(e.keyCode === 32){
                 e.preventDefault();
-                console.log("KEYPRESS");
-                console.log(e.keyCode)
     
                 toggleVideoPlaying();
             }
         }
-
-        console.log("useSpacebarKeydown run");
 
         window.addEventListener("keydown", handleSpacePress);
         
@@ -100,7 +94,6 @@ function Player(props){
             <div className="vid-container" >
                 <video 
                     onLoadStart={ () => {
-                        console.log(videoRef.current);
                         videoRef.current.currentTime = 0.05;
                     }} 
                     ref={ videoRef } 

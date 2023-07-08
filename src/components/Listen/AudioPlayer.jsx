@@ -41,7 +41,6 @@ const AudioPlayer = (props) => {
         });
 
         return(() => {
-            console.log("un render")
             audioElement.removeEventListener('canplaythrough', () => {
                 audioElement.play();
             })
