@@ -111,9 +111,14 @@ dist
 /public/static/sound_assets
 /public/static/video_assets
 
-**/.DS_Store
+**/*.DS_Store
 **/**/.DS_Store
 **/._.DS_Store
 
 .DS_Store
 .gitignore
+
+build/**
+/build/**
+/build/
+build
